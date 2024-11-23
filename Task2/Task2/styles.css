@@ -1,0 +1,83 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 250px;
+  font-family: Arial, sans-serif;
+}
+  
+.container {
+  background: linear-gradient(145deg, #346ed1, #4979e3);
+  padding: 53px;
+  border-radius: 20px;
+  border: 20px solid rgb(229 229 240);
+  width: 780px;
+  color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: relative;
+}
+  
+.container h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 13px 0;
+  text-align: center;
+}
+  
+.container p {
+  font-size: 13px;
+  color: #e0e4eb;
+  margin-bottom: 20px;
+  text-align: center;
+}
+  
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #b9c6e6;
+  border-radius: 25px;
+  padding: 8px 20px;
+  margin-bottom: 20px;
+  width: 340px;
+  margin-left: 145px;
+}
+  
+.email input {
+  border: none; 
+  background: none;
+  font-size: 15px;
+  width: 100%;
+}
+  
+.email button {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 37px;
+  height: 37px;
+  cursor: pointer;
+}
+  
+.teammates {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  position: absolute;
+  bottom: -38px;
+  left: 27%;
+}
+  
+.teammate img {
+  width: 54px;
+  height: 58px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  overflow: hidden;
+}
