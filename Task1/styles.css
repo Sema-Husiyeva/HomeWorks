@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ba7aff, #544cf5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.container {
+  display: flex;
+  width: 900px;
+  margin-top: 80px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+  
+.chat-side {
+  background-color: #00a8cc;
+  color: white;
+  padding: 40px;
+  border-radius: 10px 0px 0px 10px;
+  width: 450px;
+}
+  
+.chat-side h1 {
+  margin: 18px 0px;
+  font-size: 41px;
+  text-align: center;
+  margin-top: 73px;
+}
+  
+.chat-side p {
+  margin-top: 19px;
+  font-size: 18px;
+}
+  
+.contact-side {
+  padding: 40px;
+  width: 450px;
+}
+  
+.contact-side h2 {
+  margin-bottom: 20px;
+  font-size: 33px;
+  text-align: center;
+}
+  
+.form-input {
+  margin-bottom: 20px;
+}
+  
+.form-input label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+  
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  background-color: #efefef;
+}
+  
+form textarea {
+  height: 100px;
+}
+
+form button {
+  background-color: #00a8cc;
+  color: white;
+  border: none;
+  padding: 13px 45px;
+  font-size: 15px;
+  border-radius: 20px;
+  margin-left: 116px;
+  cursor: pointer;
+}
+  
