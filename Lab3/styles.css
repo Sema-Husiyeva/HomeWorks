@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    background-color: #F5F7FA;
+}
+
+.inner-container {
+    margin: 0 80px 20px 80px;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.header-logo-name-section {
+    display: flex;
+    gap: 8px;
+}
+
+.header-logo {
+    width: 35px;
+    height: 24px;
+}
+
+.header-name {
+    font-size: 22px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-menu-list a {
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-button {
+    padding: 8px 20px;
+    border: none;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.login-button a {
+    color: #4CAF4F;
+    font-size: 14px;
+}
+
+.sign-up-button {
+    padding: 8px 20px;
+    border: none;
+    background-color: #4CAF4F;
+    border-radius: 6px;
+}
+
+.sign-up-button a {
+    color: white;
+    font-size: 14px;
+}
+
+.banner-section {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.banner-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.banner-info h1:nth-child(1) {
+    font-size: 64px;
+    color: #4D4D4D;
+}
+
+.banner-info h1:nth-child(2) {
+    font-size: 64px;
+    color: #4CAF4F;
+}
+
+.banner-info-text {
+    color: #717171;
+    font-size: 16px;
+}
+
+.banner-info-button {
+    width: 128px;
+    padding: 14px 32px;
+    background-color: #4CAF4F;
+    border: none;
+    border-radius: 4px;
+}
+
+.banner-info-button a {
+    color: white;
+}
