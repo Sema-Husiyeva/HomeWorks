@@ -29,13 +29,14 @@ body {
     font-size: 32px;
     font-weight: 900;
     margin-bottom: 20px;
-    animation: title 2s infinite;
+    animation: title 2s ease-in infinite;
 }
 
 @keyframes title {
-    0% {color: #BFC8E5;}
-    50% {color: #BFC8E6;}
-    100% {color: #849FFF;}
+    from {opacity: 0;
+        transform: translateX(50px);}
+    to {opacity: 1;
+        transform: translateX(0);}    
 }
 
 .grouping-users {
@@ -106,8 +107,10 @@ body {
 }
 
 .user-information:hover {
-    transform: scale(1.5);
-    background-color: #849FFF;
+    transform: scale(1.2);
+    background-color: white;
+    border: 1px solid #BFC8E5;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .user-image {
@@ -142,10 +145,4 @@ body {
     border-radius: 10px;
     color: #516FD4;
     margin-bottom: 5px;
-}
-
-.jesus {
-    background-color: white;
-    border: 1px solid #BFC8E5;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
