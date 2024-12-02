@@ -29,6 +29,13 @@ body {
     font-size: 32px;
     font-weight: 900;
     margin-bottom: 20px;
+    animation: title 2s infinite;
+}
+
+@keyframes title {
+    0% {color: #BFC8E5;}
+    50% {color: #BFC8E6;}
+    100% {color: #849FFF;}
 }
 
 .grouping-users {
@@ -40,9 +47,14 @@ body {
 .search-users {
     display: flex;
     gap: 8px;
-    border: 1px solid #BFC8E5;
+    border: 2px solid #BFC8E5;
     border-radius: 4px;
     padding: 8px 40px 8px 5px;
+    transition: all 0.5s;
+}
+
+.search-users:hover {
+    border: 2px solid #849FFF;
 }
 
 .search-users-icon {
@@ -65,13 +77,14 @@ body {
     font-weight: 400;
     padding: 16px;
     opacity: 80%;
+    border-radius: 8px;
     cursor: pointer;
+    transition: all 1s;
 }
 
-.new-users {
-    color: white;
+.grouping-users-menu-list:hover {
     background-color: #849FFF;
-    border-radius: 8px;
+    color: white;
 }
 
 .users-list-section {
@@ -88,6 +101,13 @@ body {
     width: 306px;
     height: 180px;
     border-radius: 16px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.user-information:hover {
+    transform: scale(1.5);
+    background-color: #849FFF;
 }
 
 .user-image {
