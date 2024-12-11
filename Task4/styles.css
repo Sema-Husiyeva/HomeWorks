@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 77px;
+}
+
+.nav-menu-item a{
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.home a {
+    color: #FA4A0C;
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+/* Header Section Responsive  Start*/
+
+@media screen and (max-width:768px) {
+    html, body {
+        font-size: 12px;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: block;
+    }
+
+    .header-section {
+        padding: 10px;
+        margin: 0 10px;
+    }
+
+    .header-section-logo {
+        width: 100px;
+        height: 50px;
+    }
+}
+
+/* Header Section Responsive  End*/
+
+.banner-section {
+   background-image: url(images/banner.png);
+   height: 70vh;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 30px;
+   position: relative;
+}   
+
+.banner-section-name {
+    font-size: 1rem;
+    color: white;
+}
+
+.banner-section-title {
+    width: 49vw;
+}
+
+.banner-section-title h1 {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.banner-section-text {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.banner-section-stores a:first-child {
+    color: white;
+    background-color: #FA4A0C;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.banner-section-stores a:last-child {
+    color: white;
+    border: 1px solid white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.banner-section-telephones {
+    height: 85vh;
+}
+
+.banner-section-telephones img {
+    position: absolute;
+    top: 435px;
+    left: 350px;
+    border-bottom: 3px solid #E4E4E4;
+}
+
+.responsive-app-works-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 35px;
+    display: none;
+}
+
+/* Banner Section Responsive  Start*/
+
+@media screen and (max-width:768px) {
+    .container {
+        background-color: #FAFAFA;
+    } 
+
+    .banner-section {
+        background-image: none;
+        height: auto;
+        padding-top: 50px;
+    }
+
+    .banner-section-name {
+        color: #737373;
+    }
+
+    .banner-section-title {
+        width: 90vw;
+    }
+
+    .banner-section-title h1 {
+        color: black;
+    }
+
+    .banner-section-text {
+        color: #737373;
+    }
+
+    .banner-section-stores {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .banner-section-stores a:last-child {
+        color: #FA4A0C;
+        border: 1px solid #FA4A0C;
+    }
+
+    .banner-section-telephones {
+        height: 65vh;
+    }
+
+    .banner-section-telephones img {
+        width: 400px;
+        height: 490px;
+        position: static;
+        border-bottom: none;
+    }
+
+    .responsive-app-works-title {
+        display: block;
+        border-bottom: 3px solid #E4E4E4;
+        padding-bottom: 50px;
+    }
+}
+
+
+/* Banner Section Responsive  End*/
+
+.app-works-section-title {
+    font-size: 2rem;
+    opacity: 80%;
+    text-align: center;
+}
+
+.app-works-section-card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card-info-name {
+    color: #FA4A0C;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card-info-title {
+    font-size: 2rem;
+    width: 40vw;
+}
+
+.card-info-text {
+    color: #737373;
+    font-size: 1.5rem;
+    width: 35vw;
+}
+
+.responsive-card-image {
+    display: none;
+}
+
+/* App Works Section Responsive  Start*/
+
+@media screen and (max-width:768px) {
+    .app-works-section {
+        margin-top: 30px;
+    }
+
+    .app-works-section-title {
+        display: none;
+    }
+
+    .card-info {
+        text-align: center;
+    }
+
+    .card-info-title {
+        width: 50vw;
+    }
+
+    .card-info-text {
+        width: 45vw;
+    }
+
+    .card-image {
+        display: none;
+    }
+
+    .responsive-card-image {
+        display: block;
+        width: 100vw;
+        padding-left: 60px;
+    }
+}
+
+/* App Works Responsive  End*/
+
+.download-section {
+    background-image: url(images/background.png);
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.download-section-title {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.download-section-text {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.download-section-stores a:first-child {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #FA4A0C;
+    border: none;
+    border-radius: 10px;
+    padding: 19px 25px;
+}
+
+.download-section-stores a:last-child {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 17px 40px;
+}
+
+.responsive-download-section-text {
+    color: #BDBDBD;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    display: none;
+}
+
+.responsive-download-section-stores a:first-child {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    background-color: #FA4A0C;
+    border: none;
+    border-radius: 10px;
+    padding: 19px 25px;
+    margin-right: 10px;
+}
+
+.responsive-download-section-stores a:last-child {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 17px 40px;
+}
+
+.responsive-download-section-stores {
+    display: none;
+}
+
+/* Download Section Responsive  Start*/
+
+@media screen and (max-width:768px) {
+    .download-section {
+        background-image: none;
+        background-color: #252B42;
+    }
+
+    .download-section-text {
+        display: none;
+    }
+
+    .responsive-download-section-text {
+        display: block;
+    }
+
+    .download-section-stores {
+        display: none;
+    }
+
+    .responsive-download-section-stores {
+        display: block;
+    }
+
+}
+
+/* Download Section Responsive  End*/
+
+.footer-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+    height: 25vh;
+}
+
+.social-media img {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section-text {
+    font-weight: 600;
+    font-size: 1rem;    
+    color: #5C5C5C;
+}
+
+.responsive-footer-section-text {
+    font-weight: 600;
+    font-size: 1rem;    
+    color: #5C5C5C;
+    display: none;
+}
+
+/* Footer Section Responsive  Start*/
+
+@media screen and (max-width:768px) {
+    .footer-section-logo {
+        display: none;
+    }
+
+    .footer-section {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer-section-text {
+        display: none;
+    }
+
+    .responsive-footer-section-text {
+        display: block;
+    }
+
+}
+
+/* Footer Section Responsive  End*/
