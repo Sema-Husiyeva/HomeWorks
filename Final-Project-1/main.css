@@ -74,7 +74,7 @@ a {
   display: none;
 }
 
-/* Header Section Starts */
+/* Header Section Responsive Starts */
 @media screen and (max-width:768px) {
     html, body {
       font-size: 12px;
@@ -95,7 +95,7 @@ a {
       display: block;
     }
 }
-/* Header Section Ends */
+/* Header Section Responsive Ends */
 
 .banner-section {
   display: flex;
@@ -149,12 +149,13 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 10px;
 }
 .filtered-section h5 {
   color: #8C8C8C;
   font-size: 1rem;
   font-weight: 400;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .filtered-section-menu {
   display: flex;
@@ -162,7 +163,7 @@ a {
   background-color: #F5F5F5;
   border-radius: 10px;
   border: none;
-  padding: 20px 26px;
+  padding: 20px 20px;
 }
 .filtered-section-menu-name {
   display: flex;
@@ -186,7 +187,7 @@ a {
   display: none;
 }
 
-/* Banner Section Starts */
+/* Banner Section Responsive Starts */
 @media screen and (max-width:768px) {
   .filter {
     display: none;
@@ -213,7 +214,7 @@ a {
     padding-bottom: 0;
   }
 }
-/* Banner Section Ends */
+/* Banner Section Responsive Ends */
 
 .find-section {
   display: flex;
@@ -255,7 +256,7 @@ a {
   font-size: 1rem;
 }
 
-/* Find Section Starts */
+/* Find Section Responsive Starts */
 @media screen and (max-width:768px) {
   .find-section {
     flex-direction: column;
@@ -277,7 +278,7 @@ a {
     
   }
 }
-/* Find Section Ends */
+/* Find Section Responsive Ends */
 
 .adopt-section {
   display: flex;
@@ -328,7 +329,7 @@ a {
   display: none;
 }
 
-/* Adopt Section Starts */
+/* Adopt Section Responsive Starts */
 @media screen and (max-width:768px) {
   .adopt-section {
     flex-direction: column;
@@ -359,7 +360,7 @@ a {
     font-size: 16px;
   }
 }
-/* Adopt Section Ends */
+/* Adopt Section Responsive Ends */
 
 .petopia-section-info {
   display: flex;
@@ -375,15 +376,16 @@ a {
   line-height: 50px;
   margin-bottom: 45px;
 }
-.petopia-section-info-text button {
+.petopia-section-info-button {
   padding: 18px 48px;
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 1rem;
   border: 1px solid #E0E8E0;
   border-radius: 10px;
   background-color: white;
+  color: #0E2515;
+  font-size: 1rem;
 }
 .petopia-section-info-statistics {
   display: flex;
@@ -417,7 +419,7 @@ a {
   display: none;
 }
 
-/* Petopia Section Starts */
+/* Petopia Section Responsive Starts */
 @media screen and (max-width:768px) {
   .petopia-section-info {
     flex-direction: column;
@@ -445,7 +447,7 @@ a {
     background-color: white;
   }
 }
-/* Petopia Section Ends */
+/* Petopia Section Responsive Ends */
 
 .donate-section {
   display: flex;
@@ -522,7 +524,7 @@ a {
   font-size: 1rem;
 }
 
-/* Donate Section Starts */
+/* Donate Section Responsive Starts */
 @media screen and (max-width:768px) {
   .donate-section {
     gap: 23px;
@@ -542,7 +544,7 @@ a {
     justify-content: center;
   }
 }
-/* Donate Section Ends */
+/* Donate Section Responsive Ends */
 
 .volunteer-section-info {
   display: flex;
@@ -578,7 +580,7 @@ a {
   display: none;
 }
 
-/* Volunteer Section Starts */
+/* Volunteer Section Responsive Starts */
 @media screen and (max-width:768px) {
   .volunteer-section-info {
     flex-direction: column;
@@ -605,7 +607,7 @@ a {
     width: 30vw;
   }
 }
-/* Volunteer Section Ends */
+/* Volunteer Section Responsive Ends */
 
 .subscribe-section {
   display: flex;
@@ -660,7 +662,7 @@ a {
   font-size: 1rem;
 }
 
-/* Subscribe Section Starts */
+/* Subscribe Section Responsive Starts */
 @media screen and (max-width:768px) {
   .subscribe-section {
     flex-direction: column;
@@ -685,7 +687,7 @@ a {
     font-size: 16px;
   }
 }
-/* Subscribe Section Ends */
+/* Subscribe Section Responsive Ends */
 
 .footer-section-top {
   display: flex;
@@ -739,7 +741,7 @@ a {
   display: none;
 }
 
-/* Footer Section Starts */
+/* Footer Section Responsive Starts */
 @media screen and (max-width:768px) {
   .footer-section-top {
     flex-direction: column;
@@ -775,4 +777,4 @@ a {
     display: block;
   }
 }
-/* Footer Section Ends */
+/* Footer Section Responsive Ends */
