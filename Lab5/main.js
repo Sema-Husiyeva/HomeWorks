@@ -84,13 +84,21 @@ thirdDropdownMenuDesc.textContent=thirdMenu.description;
 thirdDropdownMenuDesc.setAttribute('class','accordion-dropdown-menu-desc');
 thirdDropdownMenu.appendChild(thirdDropdownMenuDesc);
 
-const headers=[dropdownMenuHeader,secondDropdownMenuHeader,thirdDropdownMenuHeader]
+const headers=[dropdownMenuHeader,secondDropdownMenuHeader,thirdDropdownMenuHeader];
+const descriptions=[dropdownMenuDesc,secondDropdownMenuDesc,thirdDropdownMenuDesc];
+const icons=[headerIcon,secondHeaderIcon,thirdHeaderIcon];
 
-headers.forEach((item)=>{
+headers.forEach((item,index)=>{
    item.addEventListener('click', ()=>{
-      let menuDesc = item.nextElementSibling;
-      menuDesc.classList.toggle('active');
-      let toggleIcon = item.children[1];
-      toggleIcon.classList.toggle('toggle-icon');
+      descriptions.forEach((desc,i)=>{
+        if (i==index){
+            desc.classList.toggle('active');
+        }
+      })
+      icons.forEach((icons,i)=>{
+        if (i==index){
+            icons.classList.toggle('toggle-icon');
+        }
+      })
    })
-})
+});
