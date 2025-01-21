@@ -102,3 +102,5 @@ headers.forEach((item,index)=>{
       })
    })
 });
+
+// itemın classlistinə active əlavə edəndə descriptionların yox headerlərin klasına active əlavə edirdi deyə bu yolla alındı
