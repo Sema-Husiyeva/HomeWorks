@@ -1,0 +1,112 @@
+@media screen and (max-width: 768px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: "Inter", serif;
+    }
+    li{
+        list-style-type: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    .container{
+        background: url(images/background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 935px;
+        position: relative;
+    }
+    .header-menu{
+        display: flex;
+        justify-content: space-between;
+        padding:30px 20px;
+    }
+    .header-logo{
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .header-menu svg{
+        width: 20px;
+        height: 20px;
+    }
+    .shopping{
+        display: flex;
+        gap: 15px;
+    }
+    .banner-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        padding: 20px;
+    }
+    .banner-menu-title {
+        color: white;
+        font-size: 35px;
+    }
+    .banner-menu-text{
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .banner-menu-btn {
+        padding: 15px 40px;
+        border: none;
+    }
+    .banner-menu-btn a{
+        color: black;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .burger-menu{
+        position: absolute;
+        background-color: white;
+        height: 935px;
+        padding: 20px;
+        left: -400px;
+        transition: 1s all;
+    }
+    .burger-menu svg{
+        width: 20px;
+        height: 20px;
+    }
+    .burger-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .burger-menu-header-logo{
+        font-weight: 500;
+    }
+    .burger-menu-search {
+        display: flex;
+        align-items: center;
+        border: 1px solid gray;
+        padding: 7px 10px;
+        margin-bottom: 30px;
+    }
+    .burger-menu-search input{
+        border: none;
+    }
+    .burger-menu-list-item {
+        font-size: 25px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid gainsboro;
+    }
+    .wishlist-item {
+        display: flex;
+        justify-content: space-between;
+    }
+    .active{
+        left: 0px;
+        transition: 1s all;
+    }
+}
