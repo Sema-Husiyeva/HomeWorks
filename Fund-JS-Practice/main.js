@@ -59,11 +59,7 @@ let user = {
 let userText=`Hörmətli ${user.firstName} ${user.lastName}, sizin ${user.age} yaşınız var.`;
 console.log(userText);
 //
-let userTable=`Ad: ${user.firstName}
-Soyad: ${user.lastName}
-Yaş: ${user.age}
-Email: ${user.email}`;
-console.log(userTable);
+console.table(user);
 //
 let splitEmail=user.email.split('@');
 console.log(`Username: ${splitEmail[0]}; Domain Name: ${splitEmail[1]}`);
@@ -95,15 +91,19 @@ let students = [
 ];
 
 function calculateGrades(){
-    let avarage=students.map(i=>{
+    let avarage = students.map(i=>{
         let sum=i.grades.reduce((acc,curr)=>acc+curr,0);
-        return sum/i.grades.length;
-    });    
+        let getAvarage=sum/i.grades.length;
+        return {
+            name:i.name,
+            avarage:getAvarage.toFixed()
+        };
+    })
     let filterGrades=avarage.filter(i=>i>85);
     let sortedGrades=avarage.sort();
     let sumGrades=avarage.reduce((acc,curr)=>acc+curr,0);
     let totalAvarage=sumGrades/avarage.length;
-    return totalAvarage;
+    return avarage;
 }
 
 console.log(calculateGrades());
