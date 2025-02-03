@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: rgb(204, 209, 249);
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -37,10 +40,12 @@
     overflow: hidden;
     transition: 0.5s;
 }
-.active {
-    height: 110px;
+.accordion-dropdown-menu-desc.active {
+    height: 120px;
     padding: 15px;
+    background-color: rgb(57, 152, 225);
+    color: white;
 }
 .toggle-icon{
-    transform: rotate(180deg);
+    transform: rotate();
 }
