@@ -30,7 +30,7 @@ container.innerHTML=accordionMenus.map(menu=>
 
 let headers=document.querySelectorAll('.accordion-dropdown-menu-header');
 let descriptions=document.querySelectorAll('.accordion-dropdown-menu-desc');
-
+let upIcons=document.querySelectorAll('.material-symbols-outlined');
 
 headers.forEach((header,index)=>{
     header.addEventListener('click',()=>{
