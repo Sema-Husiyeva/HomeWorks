@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 30px;
+}
+.header {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 40px;
+    color: #6495ED;
+}
+.form-title{
+    margin-bottom: 20px;
+    color: #6495ED;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    width: 150px;
+    font-size: 18px;
+}
+.form-group input {
+    width: 200px;
+    padding: 5px;
+}
+.fullName-alert-text, .age-alert-text, .position-alert-text, .experience-alert-text, .date-alert-text{
+    font-size: 14px;
+    color: red;
+    margin-top: 5px;
+    width: 200px;
+}
+.form-group select {
+    width: 200px;
+    padding: 5px;
+}
+.form-btn {
+    padding: 12px 40px;
+    border: none;
+    background-color: #6495ED;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+table{
+   border: 1px solid black;
+   border-collapse: collapse;
+}
+th, td{
+    padding: 10px 30px;
+    border: 1px solid black;
+}
+th{
+    background-color: #89acef;
+    color: white;
+}
+#search-input{
+    padding: 10px 20px 10px 5px;
+    margin-bottom: 10px;
+}
+.edit-btn, .delete-btn{
+    padding: 5px 8px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.edit-btn{
+    background-color: #6495ED;
+    margin-bottom: 5px;
+}
+.delete-btn{
+    background-color: red;
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        flex-direction: column;
+        padding: 20px;
+    }
+    .table-section{
+        overflow-x: auto;
+    }
+}
