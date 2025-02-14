@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Merriweather", serif;
+    background-color: #e3e7f8;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 43px;
+    width: 1068px;
+    height: 630px;
+    margin-top: 100px;
+    background: white;
+    padding: 60px;
+    border-radius: 16px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.search-users-title {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.grouping-users {
+    display: flex;
+    align-items: center;
+    gap: 130px;
+}
+
+.search-users {
+    display: flex;
+    gap: 8px;
+    border: 2px solid #BFC8E5;
+    border-radius: 4px;
+    padding: 8px 40px 8px 5px;
+    transition: all 0.5s;
+}
+
+.search-users:hover {
+    border: 2px solid #849FFF;
+}
+
+.search-users-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.search-users-input {
+    border: none;
+}
+
+.grouping-users-menu {
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+}
+
+.grouping-users-menu-list {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 16px;
+    opacity: 80%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.grouping-users-menu-list:hover {
+    background-color: #849FFF;
+    color: white;
+}
+
+.users-list-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.users-list-item {
+    display: flex;
+    gap: 16px;
+    padding: 24px;
+    background-color: #FBFCFF;
+    width: 306px;
+    height: 180px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.users-list-item:hover {
+    transform: scale(1.2);
+    background-color: white;
+    border: 1px solid #BFC8E5;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.user-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.username h3:nth-child(1) {
+    font-size: 18px;
+    font-weight: 900;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.username h3:nth-child(2) {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.tags p {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 2px 8px;
+    border: 1px solid #BFC8E6;
+    border-radius: 10px;
+    color: #516FD4;
+    margin-bottom: 5px;
+}

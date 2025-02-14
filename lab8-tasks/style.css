@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+} 
+
+
+/* .btn{
+    padding: 20px 40px;
+}
+
+.dark-mode{
+    background-color: black;
+}
+.light-mode{
+    background-color: white;
+} 
+
+
+.container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.plus-btn, .minus-btn{
+    padding: 10px;
+}
+
+
+
+.container{
+    display: flex;
+    border: 1px solid black;
+}
+.input-icon{
+    width: 25px;
+    height: 25px;
+}
+.password-input{
+    border: none;
+    width: 200px;
+} */
+
+
+
+/* #search-input{
+    padding: 10px 15px;
+    margin-bottom: 10px;
+} */
+
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.btn{
+    width: 80px;
+    padding: 5px 10px;
+}
+.error-message{
+    color: red;
+}

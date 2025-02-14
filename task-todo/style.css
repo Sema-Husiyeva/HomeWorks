@@ -1,0 +1,104 @@
+@media screen and (max-width: 768px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: black;
+    }
+    .container{
+        margin: 20px 20px;
+    }
+    .header{
+        border: 1px solid #FFFFFF;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #040C17;
+        height: 20vh;
+        border-radius: 34px;
+        margin-bottom: 30px;
+    }
+    .header-title h1{
+        color: white;
+        margin-bottom: 30px;
+    }
+    .header-date{
+        color: white;
+    }
+    .header-counter{
+        background-color: white;
+        padding: 30px 40px;
+        border-radius: 50%;
+
+    }
+
+    .input-section{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+    #task-input{
+        background-color: #111112;
+        border: 1px solid #252529;
+        border-radius: 6px;
+        padding: 12px;
+        width: 70vw;
+        color: white;
+    }
+    .input-section-plus-icon{
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .plus-icon{
+        font-size: 20px;
+        border: none;
+        background-color: white;
+    }
+    .todo-list-title{
+        color: #434349;
+        margin-bottom: 20px;
+    }
+    .todo-list{
+        display: flex;
+    }
+    .todo-lists-item{
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        background-color: #17171A;
+        padding: 16px;
+        border-radius: 8px;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .dots{
+        width: 15px;
+        height: 15px;
+    }
+    .delete-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .delete-btn{
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        padding: 8px 15px;
+        background-color: red;
+        color: white;
+        border: none;
+        display: none;
+    }
+    .active{
+        display: block;
+    }
+}
