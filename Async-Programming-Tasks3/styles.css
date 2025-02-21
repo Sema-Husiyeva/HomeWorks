@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.traffic-lights{
+    width: 250px;
+    height: 600px;
+    background-color: black;
+    padding: 20px;
+    border-radius: 40px;
+}
+#red-light, #yellow-light, #green-light{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 25px auto;
+}
+#red-light{
+    background-color: red;
+    transition: all 0.5s;
+}
+#yellow-light{
+    background-color: yellow;
+    transition: all 0.5s;
+}
+#green-light{
+    background-color: green;
+    transition: all 0.5s;
+}
