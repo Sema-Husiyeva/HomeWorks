@@ -30,7 +30,7 @@ function createNewEmployee(e){
     let id = employees.length + 1;
     fullNameAlertText.textContent='';
     ageAlertText.textContent='';
-    positionAlertText.textContent='';
+    positionAlertText.textContent='';  
     experienceAlertText.textContent='';
     dateAlertText.textContent='';
 
