@@ -1,0 +1,13 @@
+.header {
+  background-color: rgb(230, 140, 140);
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+.header-menu {
+  display: flex;
+  gap: 20px;
+}/*# sourceMappingURL=header.css.map */

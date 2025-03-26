@@ -1,0 +1,167 @@
+$main-bg-color: #10141E;
+$bg-color: #161D2F;
+$color-red: #FC4747;
+$color-white: #FFFFFF;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $main-bg-color;
+    font-family: "Outfit", sans-serif;
+
+    .home-page {
+        display: flex;
+        
+        &-left {
+            width: 80px;
+            height: 750px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $bg-color;
+            margin: 32px;
+            padding: 20px;
+            border-radius: 20px;
+
+            &-tabs {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                margin-top: 60px;
+
+                &-img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+    
+            &-profile {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        &-right {
+            margin-top: 50px;
+
+            &-search {
+                display: flex;
+                align-items: center;
+                margin-bottom: 40px;
+
+                &-input {
+                    background-color: rgb(1, 1, 30);
+                    border: none;
+                    color: $color-white;
+                    width: 330px;
+                    height: 30px;
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                    margin-left: 20px;
+                }
+            }
+
+            &-movies {
+                margin-bottom: 70px;
+
+                &-title {
+                    color: $color-white;
+                    font-weight: 300;
+                    font-size: 2rem;
+                    margin-bottom: 20px;
+                }
+
+                &-alert-message {
+                    color: $color-red;
+                    font-size: 3rem;
+                    margin-top: 50px;
+                    font-weight: 400;
+                    display: none;
+                }
+
+                &-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 40px;
+
+                    &-card {
+                        position: relative;
+                        cursor: pointer;
+                        transition: 0.5s all;
+
+                        &:hover{
+                            transform: scale(1.1);
+                        }
+                        &-non-fav-icon {
+                            position: absolute;
+                            left: 230px;
+                            top: 10px;
+                        }
+
+                        &-fav-icon {
+                            position: absolute;
+                            left: 230px;
+                            top: 10px;
+                        }
+                        &-img {
+                            width: 280px;
+                            height: 174px;
+                            border-radius: 8px;
+                            margin-bottom: 10px;
+                        }
+
+                        &-info {
+                            display: flex;
+                            align-items: center;
+                            gap: 3px;
+                            margin-bottom: 10px;
+
+                            & p {
+                                color: $color-white;
+                                opacity: 75%;
+                                font-size: 13px;
+                            }
+
+                            &-format {
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+
+                                & img {
+                                    width: 15px;
+                                    height: 15px;
+                                }
+                            }
+
+                            &-dot {
+                                width: 10px;
+                                height: 10px;
+                                padding-bottom: 25px;
+                                padding-left: 3px;
+                            }
+                        }
+
+                        &-name {
+                            color: $color-white;
+                            font-size: 1.2rem;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.active {
+    display: block;
+}
+
+.non-active {
+    display: none;
+}

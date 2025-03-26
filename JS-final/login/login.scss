@@ -1,0 +1,106 @@
+$main-bg-color: #10141E;
+$bg-color: #161D2F;
+$color-red: #FC4747;
+$color-white: #FFFFFF;
+$border-color: #5A698F;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+#signup-link{
+    color: $color-red;
+    margin-left: 5px;
+    cursor: pointer;
+}
+#login-email, #login-password{
+    background-color: $bg-color;
+    border: none;
+    color: white;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: $main-bg-color;
+    font-family: "Outfit", sans-serif;
+
+    .login-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+
+        &-logo {
+            width: 32px;
+            height: 32px;
+        }
+
+        &-info {
+            background-color: $bg-color;
+            padding: 30px;
+            width: 400px;
+            height: 370px;
+            border-radius: 20px;
+
+            &-title {
+                color: $color-white;
+                font-size: 32px;
+                font-weight: 300;
+                margin-bottom: 20px;
+            }
+
+            &-form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                margin-bottom: 20px;
+
+                &-input {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 1px solid $border-color;
+                    padding: 10px 20px;
+                    margin-bottom: 10px;
+
+                    &-email-alert, &-password-alert {
+                        color: $color-red;
+                        font-size: 13px;
+                    }
+                }
+
+                &-button{
+                    width: 100%;
+                    height: 48px;
+                    border: none;
+                    border-radius: 6px;
+                    background-color: $color-red;
+                    color: $color-white;
+                    font-size: 15px;
+                    font-weight: 300;
+                    margin-bottom: 30px;
+                    cursor: pointer;
+                    transition: 0.5s all;
+
+                    &:hover{
+                        background-color: #d47070;
+                    }
+                }
+            }
+
+            &-signup-text {
+                color: $color-white;
+                font-size: 15px;
+                font-weight: 300;
+                text-align: center;
+            }
+        }
+    }
+}

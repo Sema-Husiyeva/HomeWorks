@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+#login-link {
+  color: #FC4747;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+#signup-email, #signup-password, #repeat-password {
+  background-color: #161D2F;
+  border: none;
+  color: white;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #10141E;
+  font-family: "Outfit", sans-serif;
+}
+body .sign-up-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+body .sign-up-section-logo {
+  width: 32px;
+  height: 32px;
+}
+body .sign-up-section-info {
+  background-color: #161D2F;
+  padding: 30px;
+  width: 450px;
+  height: 430px;
+  border-radius: 20px;
+}
+body .sign-up-section-info-title {
+  color: #FFFFFF;
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+body .sign-up-section-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+body .sign-up-section-info-form-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #5A698F;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+body .sign-up-section-info-form-input-email-alert, body .sign-up-section-info-form-input-password-alert, body .sign-up-section-info-form-input-repeat-password-alert {
+  color: #FC4747;
+  font-size: 13px;
+}
+body .sign-up-section-info-form-button {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 6px;
+  background-color: #FC4747;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+body .sign-up-section-info-form-button:hover {
+  background-color: #d47070;
+}
+body .sign-up-section-info-login-text {
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+}/*# sourceMappingURL=signup.css.map */
