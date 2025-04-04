@@ -1,14 +1,22 @@
-table {
-    margin: 30px;
-    border: 1px solid black;
-    border-collapse: collapse;
+.table {
+  margin-top: 50px;
+  margin-left: 50px;
 }
-th, td{
-    padding: 10px 30px;
-    border: 1px solid black;
-    width: 200px;
+.table-title {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #89acef;
 }
-th{
-    background-color: #89acef;
-    color: white;
+.table table {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
+.table th, .table td {
+  padding: 15px 15px;
+  border: 1px solid white;
+  width: 150px;
+}
+.table th {
+  background-color: #89acef;
+  color: white;
+}/*# sourceMappingURL=table.css.map */

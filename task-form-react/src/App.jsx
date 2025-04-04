@@ -10,10 +10,10 @@ function App() {
     setUsers([...users, user]);
   };
   return (
-    <>
+    <div className='container'>
       <Form createUser={createUser} />
       <Table users={users} />
-    </>
+    </div>
   )
 }
 

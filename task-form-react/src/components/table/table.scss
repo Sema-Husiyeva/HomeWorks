@@ -1,0 +1,25 @@
+.table {
+    margin-top: 50px;
+    margin-left: 50px;
+
+    &-title {
+        margin-bottom: 30px;
+        text-align: center;
+        color: #89acef;
+    }
+
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td{
+        padding: 15px 15px;
+        border: 1px solid white;
+        width: 150px;
+    }
+    th{
+        background-color: #89acef;
+        color: white;
+    }
+}

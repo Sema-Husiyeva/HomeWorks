@@ -3,28 +3,33 @@ import './table.css'
 
 const Table = ({users}) => {
   return (
-    <>
+    <div className='table'>
+      <h2 className='table-title'>İşçilər cədvəli</h2>
       <table>
         <thead>
             <tr>
-                <th>Username</th>
-                <th>Surname</th>
+                <th>Tam ad</th>
+                <th>Vəzifəsi</th>
+                <th>Şöbəsi</th>
                 <th>Email</th>
-                <th>Number</th>
+                <th>Əmək haqqı</th>
+                <th>İşə qəbul tarixi</th>
             </tr>
         </thead>
         <tbody>
-            {users.map((user)=>(
-                <tr key={user.number}>
+            {users.map((user,index)=>(
+                <tr key={index}>
                     <td>{user.username}</td>
-                    <td>{user.surname}</td>
+                    <td>{user.position}</td>
+                    <td>{user.department}</td>
                     <td>{user.email}</td>
-                    <td>{user.number}</td>
+                    <td>{user.salary} AZN</td>
+                    <td>{user.date}</td>
                 </tr>
             ))}
         </tbody>
       </table>
-    </>
+    </div>
   )
 }
 
