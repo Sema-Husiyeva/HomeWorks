@@ -1,0 +1,30 @@
+.todo-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 500px;
+    border-radius: 10px;
+
+    &-item {
+        font-size: 20px;
+        background-color: white;
+        color: #5dade2;
+        padding: 13px 20px;
+        width: 400px;
+        border-radius: 10px;
+    }
+
+    &-btn {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+        color: #5dade2;
+        transition: 0.5s all;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #eceef0;
+        }
+    }
+}

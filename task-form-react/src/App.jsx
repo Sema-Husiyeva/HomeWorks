@@ -1,7 +1,8 @@
-import { useState } from 'react'
 import './App.css'
-import Form from './components/form-component'
+import { useState } from 'react'
 import Table from './components/table';
+import Form from './components/form-component'
+
 
 function App() {
   const [users, setUsers] = useState([]);
