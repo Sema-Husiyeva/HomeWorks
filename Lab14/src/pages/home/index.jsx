@@ -32,6 +32,7 @@ const HomePage = () => {
     }
   return (
     <div className='todo'>
+      <h2 className='todo-title'>Your Todo List</h2>
       <div>
         <input className='todo-input' onChange={handleChange} value={item} type="text" />
         <button className='todo-btn' onClick={handleAdd}>Add</button>

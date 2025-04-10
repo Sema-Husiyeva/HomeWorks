@@ -1,0 +1,18 @@
+.auto-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+}
+  
+.auto-btn.on {
+    background-color: purple;
+}
+  
+.auto-btn.off {
+    background-color: orange;
+}
