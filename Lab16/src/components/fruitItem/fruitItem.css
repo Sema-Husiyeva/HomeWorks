@@ -1,0 +1,85 @@
+li {
+  list-style-type: none;
+}
+
+.fruits {
+  display: flex;
+  gap: 50px;
+}
+.fruits-list {
+  background-color: rgb(238, 238, 238);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.fruits-list h2 {
+  font-size: 30px;
+}
+.fruits-list-buttons {
+  display: flex;
+  gap: 12px;
+}
+.fruits-list-buttons button {
+  padding: 6px 15px;
+  border: none;
+  background-color: rgb(12, 206, 12);
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.fruits-list-buttons button:hover {
+  background-color: rgb(21, 228, 21);
+}
+.fruits-list-item {
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.fruits-list-item:hover {
+  transform: translateY(-3px);
+}
+.fruits-selected {
+  background-color: rgb(238, 238, 238);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.fruits-selected h2 {
+  font-size: 30px;
+}
+.fruits-selected-list {
+  width: 100%;
+}
+.fruits-selected-list p {
+  font-size: 18px;
+  text-align: center;
+}
+.fruits-selected-list-item {
+  background-color: white;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 20px;
+}
+
+.selected {
+  background-color: #d6eaf8;
+  border: 2px solid #5dade2;
+}/*# sourceMappingURL=fruitItem.css.map */

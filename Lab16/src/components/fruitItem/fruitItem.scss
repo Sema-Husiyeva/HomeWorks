@@ -1,0 +1,96 @@
+li {
+    list-style-type: none;
+}
+.fruits {
+    display: flex;
+    gap: 50px;
+
+    &-list {
+        background-color: rgb(238, 238, 238);
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        & h2 {
+            font-size: 30px;
+        }
+
+        &-buttons {
+            display: flex;
+            gap: 12px;
+
+            & button {
+                padding: 6px 15px;
+                border: none;
+                background-color: rgb(12, 206, 12);
+                color: white;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: all 0.5s;
+
+                &:hover {
+                    background-color: rgb(21, 228, 21);
+                }
+            }
+        }
+
+        &-item {
+            background-color: white;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            cursor: pointer;
+            transition: all 0.5s;
+
+            &:hover {
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    &-selected {
+        background-color: rgb(238, 238, 238);
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        & h2 {
+            font-size: 30px;
+        }
+
+        &-list {
+            width: 100%;
+
+            & p {
+                font-size: 18px;
+                text-align: center;
+            }
+
+            &-item {
+                background-color: white;
+                text-align: center;
+                padding: 10px 0;
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.selected {
+    background-color: #d6eaf8;
+    border: 2px solid #5dade2;
+}
