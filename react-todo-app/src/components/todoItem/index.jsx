@@ -1,7 +1,7 @@
 import React from 'react';
-import "./todo.css"
 import NonSelect from '../../assets/non-select-icon.svg';
 import Selected from '../../assets/selected-icon.svg';
+import "./todo.css"
 
 const TodoItem = ({items, setItems, setItem, setEditingId, selectedItems, setSelectedItems}) => {
     const handleDelete = (id) =>{

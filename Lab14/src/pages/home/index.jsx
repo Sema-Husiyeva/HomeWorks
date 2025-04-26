@@ -1,6 +1,7 @@
 import './home.css'
 import React, { useState } from 'react'
 import TodoItem from '../../components/todoItem';
+import './home.css'
 
 const HomePage = () => {
     const [item, setItem] = useState('');

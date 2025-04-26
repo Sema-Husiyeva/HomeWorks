@@ -1,6 +1,6 @@
 import {useState} from 'react'
-import './slider.css';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import './slider.css';
 
 const Slider = ({imageData}) => {
     const [imgIndex, setImgIndex] = useState(0);

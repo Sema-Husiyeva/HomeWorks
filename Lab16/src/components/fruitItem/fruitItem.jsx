@@ -1,7 +1,7 @@
 import React from 'react'
-import "./fruitItem.css"
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleFruits, selectAll, deleteAll } from '../../store/features/fruitSlice'
+import "./fruitItem.css"
 
 
 const FruitItem = () => {

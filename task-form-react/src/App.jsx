@@ -1,7 +1,7 @@
-import './App.css'
 import { useState } from 'react'
 import Table from './components/table';
 import Form from './components/form-component'
+import './App.css'
 
 
 function App() {
