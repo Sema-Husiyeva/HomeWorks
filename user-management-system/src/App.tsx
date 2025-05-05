@@ -1,29 +1,34 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Table, Input, InputNumber, Button, Form } from 'antd';
+import { Table, Input, InputNumber, Button, Form, Space } from 'antd';
 import { RootState } from './store/store';
 import { submitForm, editUser, deleteUser } from './store/features/formSlice';
-import "./App.css"
+import './App.css';
 
-export default function App() {
+interface IFormData {
+  name: string;
+  age: number | null;
+  address: string;
+  key?: number;
+}
+
+function App() {
   const dispatch = useDispatch();
   const dataSource = useSelector((state: RootState) => state.form.dataSource);
-  const [formData, setFormData] = useState({
-    name: '',
-    age: 0,
-    address: '',
-  });
-  const [editingKey, setEditingKey] = useState(null);
-  const [editData, setEditData] = useState({ name: '', age: 0, address: '' });
+  const [editingKey, setEditingKey] = useState<number | null>(null);
+  const [editData, setEditData] = useState<IFormData>({ name: '', age: null, address: '' });
+  const [form] = Form.useForm();
+
   const isEditing = (record: any) => record.key === editingKey;
 
-  const handleSubmit = () => {
-    const newUser = {
-      ...formData,
+  const onFinish = (values: any) => {
+    const newUser: IFormData = {
+      ...values.user,
+      age: Number(values.user.age),
       key: Date.now(),
     };
     dispatch(submitForm(newUser));
-    setFormData({ name: '', age: 0, address: '' });
+    form.resetFields();
   };
 
   const handleEdit = (record: any) => {
@@ -32,7 +37,7 @@ export default function App() {
   };
 
   const handleSave = (key: number) => {
-    dispatch(editUser({ ...editData, key }));
+    dispatch(editUser({ ...editData, age: Number(editData.age), key }));
     setEditingKey(null);
   };
 
@@ -67,7 +72,7 @@ export default function App() {
         isEditing(record) ? (
           <InputNumber
             value={editData.age}
-            onChange={(value) => setEditData({ ...editData, age: value ?? 0 })}
+            onChange={(value) => setEditData({ ...editData, age: value })}
           />
         ) : (
           record.age
@@ -103,20 +108,23 @@ export default function App() {
           </>
         ) : (
           <>
-            <Button type="primary" onClick={() => handleEdit(record)} style={{marginRight: 10}}>Edit</Button>
-            <Button type="primary" danger onClick={() => handleDelete(record.key)}>Delete</Button>
+            <Button type="primary" onClick={() => handleEdit(record)} style={{ marginRight: 10 }}>
+              Edit
+            </Button>
+            <Button type="primary" danger onClick={() => handleDelete(record.key)}>
+              Delete
+            </Button>
           </>
         );
       },
     },
   ];
 
-
   const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
   };
-  
+
   const validateMessages = {
     required: '${label} is required!',
     types: {
@@ -126,43 +134,37 @@ export default function App() {
       range: '${label} must be between ${min} and ${max}',
     },
   };
-  
-  const onFinish = (values: any) => {
-    console.log(values);
-  };
 
   return (
-    <div className='container'>
+    <>
       <Form
-        {...layout}
-        name="nest-messages"
-        onFinish={onFinish}
-        style={{ maxWidth: 600, marginTop: 50 }}
-        validateMessages={validateMessages}
-      >
-        <Form.Item name={['user', 'name']} label="Name" rules={[{ required: true }]}>
-          <Input value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
-        </Form.Item>
-        <Form.Item name={['user', 'age']} label="Age" rules={[{ type: 'number', min: 0, max: 99, required:true }]}>
-          <InputNumber type='number' value={formData.age}
-            onChange={(value) => setFormData({ ...formData, age: value ?? 0 })} />
-        </Form.Item>
-        <Form.Item name={['user', 'address']} label="Address" rules={[{required:true}]}>
-          <Input value={formData.address}
-            onChange={(e) => setFormData({ ...formData, address: e.target.value })} />
-        </Form.Item>
-        <Form.Item label={null}>
-          <Button type="primary" onClick={handleSubmit}>
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
-
+       form={form}
+       {...layout}
+       name="nest-messages"
+       onFinish={onFinish}
+       style={{ maxWidth: 600, marginTop: 50 }}
+       validateMessages={validateMessages}
+     >
+      <Form.Item name={['user', 'name']} label="Name" rules={[{ required: true }]}>
+        <Input />
+      </Form.Item>
+      <Form.Item name={['user', 'age']} label="Age" rules={[{ type: 'number', min: 0, max: 99, required: true }]}>
+        <InputNumber />
+      </Form.Item>
+      <Form.Item name={['user', 'address']} label="Address" rules={[{ required: true }]}>
+        <Input />
+      </Form.Item>
+      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
+     </Form>
 
       <br />
       <Table dataSource={dataSource} columns={columns} />
-    </div>
+    </>
   );
 }
 
+export default App;

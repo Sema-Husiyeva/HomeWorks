@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-interface FormData {
+interface IFormData {
     name: string;
-    age: number;
+    age: number | null;
     address: string;
-    key: number;
+    key?: number;
 }
 
-interface FormState {
-    dataSource: FormData[];
+interface IFormState {
+    dataSource: IFormData[];
 }
   
-  const initialState: FormState = {
+  const initialState: IFormState = {
     dataSource: [],
 };
 
@@ -19,13 +19,13 @@ export const formSlice = createSlice({
     name: 'form',
     initialState,
     reducers: {
-        submitForm: (state, action: PayloadAction<FormData>) => {
+        submitForm: (state, action: PayloadAction<IFormData>) => {
             state.dataSource.push(action.payload);
         },
         deleteUser: (state, action: PayloadAction<number>) => {
             state.dataSource = state.dataSource.filter(user => user.key !== action.payload);
         },
-        editUser: (state, action: PayloadAction<FormData>) => {
+        editUser: (state, action: PayloadAction<IFormData>) => {
             const index = state.dataSource.findIndex(user => user.key === action.payload.key);
             if (index !== -1) {
               state.dataSource[index] = action.payload;
