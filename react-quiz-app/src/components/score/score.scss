@@ -1,0 +1,62 @@
+@import '../../styles/_variables.scss';
+
+.score-menu {
+    display: flex;
+    gap: 100px;
+
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 70px;
+
+        &-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            & h2 {
+                color: $main-text-color;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &-left {
+        h1:nth-child(1){
+            color: $main-text-color;
+            font-weight: 300;
+            font-size: 4rem;
+        }
+        h1:nth-child(2){
+            color: $main-text-color;
+            font-size: 4rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+    }
+
+    &-right {
+        & h1 {
+            font-size: 9rem;
+            font-weight: 500;
+            color: $main-text-color;
+        }
+        & p {
+            font-size: 1.5rem;
+            color: $text-color;
+            font-weight: 400;
+        }
+        &-result {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: $white-color;
+            width: 564px;
+            border-radius: 24px;
+            padding: 45px;
+            margin-bottom: 32px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+    }
+}

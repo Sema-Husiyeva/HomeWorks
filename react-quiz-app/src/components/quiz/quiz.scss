@@ -1,0 +1,80 @@
+@import  '../../styles/_variables.scss';
+
+
+.question-menu {
+    display: flex;
+    gap: 50px;
+
+    &-left {
+        width: 465px;
+
+        & i {
+            color: $text-color;
+        }
+        & h3 {
+            color: $main-text-color;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-top: 27px;
+        }
+    }
+
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        &-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            & h2 {
+                color: $main-text-color;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &-right {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        &-correct {
+            border: 2px solid $green-color;
+        }
+        &-incorrect {
+            border: 2px solid $red-color;
+        }
+        &-selected {
+            border: 1px solid $purple-color;
+        }
+        &-focus {
+            transition: 0.2s;
+            &:hover {
+                background-color: rgb(245, 245, 245);
+                cursor: pointer;
+            }
+        }
+
+        &-error {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            & p {
+                color: $red-color;
+                font-size: 1.5rem;
+                font-weight: 300;
+            }
+        }
+    }
+
+    &-loading {
+        font-size: 2rem;
+        color: $purple-color;
+    }
+}

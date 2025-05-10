@@ -1,0 +1,39 @@
+@import '../../styles/_variables.scss';
+
+.btn {
+    padding: 15px 80px;
+    border: none;
+    border-radius: 24px;
+
+    &-white {
+        background-color: $white-color;
+        padding: 15px;
+        width: 564px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $main-text-color;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    
+    &-purple {
+        background-color: $purple-color;
+        color: $white-color;
+        padding: 30px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        width: 564px;
+        transition: all 0.2s;
+
+        &:hover {
+            background-color: rgb(189, 102, 243);
+            cursor: pointer;
+        }
+    }
+}
+
+.status-icon {
+    margin-left: auto;
+}

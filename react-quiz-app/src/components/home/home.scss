@@ -1,0 +1,56 @@
+@import '../../styles/variables';
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: $background-color;
+}
+.start-menu {
+    display: flex;
+    gap: 100px;
+    margin-top: 100px;
+
+    &-left {
+        h1:nth-child(1){
+            color: $main-text-color;
+            font-weight: 300;
+            font-size: 4rem;
+        }
+        h1:nth-child(2){
+            color: $main-text-color;
+            font-size: 4rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+        & i {
+            color: $text-color;
+        }
+    }
+
+    &-right {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        &-btn{
+            transition: 0.2s;
+            &:hover {
+                background-color: rgb(245, 245, 245);
+                cursor: pointer;
+            }
+        }
+    }
+
+    &-theme{
+        display: flex;
+        justify-content: flex-end;
+        
+    }
+}
+
+.category-icon {
+    width: 54px;
+    height: 54px;
+}
