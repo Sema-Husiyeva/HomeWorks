@@ -1,0 +1,25 @@
+@import "../../styles/variables";
+@import '../../styles/mixins';
+
+.header-section {
+    @include flex(space-between, center);
+    padding: 30px 0;
+
+    &-logo {
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: $main-color;
+        font-weight: 700;
+    }
+
+    &-navbar {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        &-link {
+            text-decoration: none;
+            color: $first-font-color;
+        }
+    }
+}

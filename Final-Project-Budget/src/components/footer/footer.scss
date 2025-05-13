@@ -1,0 +1,64 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.footer-section {
+    padding: 30px 0;
+    &-main {
+        @include flex(space-between, center);
+        margin-bottom: 40px;
+    }
+
+    &-info {
+        &-logo {
+            color: $main-color;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        &-list {
+            list-style-type: none;
+            color: $third-font-color;
+        }
+    }
+
+    &-contact {
+        & p {
+            color: $first-font-color;
+            margin-bottom: 12px;
+        }
+
+        &-email {
+            margin-bottom: 20px;
+            & input {
+                border: 1px solid #CCCCCC91;
+                border-radius: 5px 0 0 5px;
+                padding: 12px 20px;
+            }
+
+            &-btn {
+                padding: 12px 30px;
+                border-radius: 0;
+            }
+        }
+
+        &-social-media {
+            @include flex(space-around, center);
+        }
+    }
+
+    &-navbar {
+        @include flex(center, center, 10px, column);
+
+        &-link {
+            text-decoration: none;
+            color: $third-font-color;
+        }
+    }
+
+    &-copyright {
+        color: $third-font-color;
+        text-align: center;
+        font-weight: 300;
+        margin-left: 75px;
+    }
+}
