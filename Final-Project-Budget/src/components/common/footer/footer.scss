@@ -1,5 +1,5 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .footer-section {
     padding: 30px 0;
@@ -22,22 +22,32 @@
     }
 
     &-contact {
-        & p {
+        &-title {
             color: $first-font-color;
             margin-bottom: 12px;
         }
 
         &-email {
             margin-bottom: 20px;
-            & input {
-                border: 1px solid #CCCCCC91;
-                border-radius: 5px 0 0 5px;
-                padding: 12px 20px;
+            &-input {
+                display: flex;
+
+                & input {
+                    border: 1px solid #CCCCCC91;
+                    border-radius: 5px 0 0 5px;
+                    padding: 12px 20px;
+                }
+    
+                &-btn {
+                    padding: 12px 30px;
+                    border-radius: 0;
+                }
             }
 
-            &-btn {
-                padding: 12px 30px;
-                border-radius: 0;
+            &-error {
+                color: red;
+                font-size: 14px;
+                margin-top: 5px
             }
         }
 

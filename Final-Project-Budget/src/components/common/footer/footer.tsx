@@ -1,15 +1,36 @@
+import React, { useState } from 'react';
 import { NavLink } from 'react-router';
-import Button from '../Button/button';
-import facebookIcon from '../../assets/svg/facebook-icon.svg';
-import instagramIcon from '../../assets/svg/instagram-icon.svg';
-import youtubeIcon from '../../assets/svg/youtube-icon.svg';
-import twitterIcon from '../../assets/svg/twitter-icon.svg';
-import linkedinIcon from '../../assets/svg/linkedin-icon.svg';
+import Button from '../../UI/Button/button';
+import facebookIcon from '../../../assets/svg/facebook-icon.svg';
+import instagramIcon from '../../../assets/svg/instagram-icon.svg';
+import youtubeIcon from '../../../assets/svg/youtube-icon.svg';
+import twitterIcon from '../../../assets/svg/twitter-icon.svg';
+import linkedinIcon from '../../../assets/svg/linkedin-icon.svg';
 import './footer.scss'
 
 const Footer = () => {
+    const [email, setEmail] = useState('');
+    const [error, setError] = useState('');
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+        setEmail(e.target.value);
+    }
+
+    const handleSubscribe = () => {
+        if(email === '') {
+            setError("Can't be empty!");
+            return;
+        }
+
+        if(!email.includes('@gmail.com')) {
+            setError("@gmail.com was omitted!");
+            return;
+        }
+        setEmail('');
+        setError('');
+    }
   return (
-    <footer className='footer-section'>
+    <footer className='footer-section container'>
      <div className='footer-section-main'>   
       <div className='footer-section-info'>
         <h1 className='footer-section-info-logo'>Monux</h1>
@@ -21,10 +42,13 @@ const Footer = () => {
       </div>
 
       <div className='footer-section-contact'>
-        <p>Newsletter</p>
+        <p className='footer-section-contact-title'>Newsletter</p>
         <div className='footer-section-contact-email'>
-            <input type="email" placeholder='E-mail' />
-            <Button text='Subscribe' variant='green' className='footer-section-contact-email-btn' />
+            <div className='footer-section-contact-email-input'>
+            <input type="email" value={email} onChange={handleChange} placeholder='E-mail' />
+            <Button text='Subscribe' onClick={handleSubscribe} variant='blue' className='footer-section-contact-email-input-btn' />
+            </div>
+            {error && <p className="footer-section-contact-email-error">{error}</p>}
         </div>
         <div className='footer-section-contact-social-media'>
             <img src={facebookIcon} alt="facebook-icon" />

@@ -5,13 +5,14 @@ import './button.scss'
 interface IButton {
     text: string;
     type?: 'button' | 'submit';
-    onClick?: () => void;
+    onClick: () => void;
     isActive?: boolean;
     variant?: string;
     className?: string;
+    icon?: string;
 }
 
-const Button: FC<IButton> = ({text='',type='button', onClick, isActive=false, variant='white', className = ''}) => {
+const Button: FC<IButton> = ({text='',type='button', onClick, isActive=false, variant='white', className = '', icon}) => {
   return (
       <button 
       onClick={onClick} 
@@ -19,8 +20,9 @@ const Button: FC<IButton> = ({text='',type='button', onClick, isActive=false, va
       disabled={isActive} 
       className={classNames('btn', className, {
         'btn-white': variant === 'white',
-        'btn-green': variant === 'green',
+        'btn-blue': variant === 'blue',
       })}>
+      {icon && <img src={icon} alt={text} />}  
       {text}
       </button>
   )

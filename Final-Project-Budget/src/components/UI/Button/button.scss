@@ -1,16 +1,25 @@
-@import "../../styles/variables";
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 .btn {
     border: none;
     border-radius: 10px;
-    padding: 10px 40px;
+    padding: 14px 45px;
+    @include flex(center, center, 5px);
+    font-size: 17px;
 
     &-white {
         background-color: $white-color;
         color: $third-bg-color;
+        transition: all 0.3s;
+        &:hover {
+            background-color: $hover-bg-color;
+            color: $white-color;
+            cursor: pointer;
+        }
     }
 
-    &-green {
+    &-blue {
         background-color: $main-color;
         color: $white-color;
         transition: all 0.3s;

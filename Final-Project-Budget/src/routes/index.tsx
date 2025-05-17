@@ -1,11 +1,12 @@
 import {Routes, Route} from 'react-router-dom'
 import Layout from '../components/layout/layout'
-import Home from '../pages/Home/home'
-import Help from '../pages/Help/help'
-import Faq from '../pages/FAQ/faq'
-import Blog from '../pages/Blog/blog'
-import Subscription from '../pages/Subscription/subscription'
-import Login from '../pages/Login/login'
+import Home from '../components/pages/Home/home'
+import Help from '../components/pages/Help/help'
+import Faq from '../components/pages/FAQ/faq'
+import Blog from '../components/pages/Blog/blog'
+import Subscription from '../components/pages/Subscription/subscription'
+import Login from '../components/pages/Login/login'
+import Payment from '../components/pages/Payment/payment'
 
 
 const AppRoutes = () => {
@@ -17,6 +18,7 @@ const AppRoutes = () => {
           <Route path="faq" element={<Faq />} />
           <Route path="blog" element={<Blog />} />
           <Route path="subscription" element={<Subscription />} />
+          <Route path="payment" element={<Payment />} />
         </Route>
 
         <Route path="login" element={<Login />} />

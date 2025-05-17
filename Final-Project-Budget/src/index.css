@@ -8,5 +8,8 @@
 
 body {
     font-family: "DM Sans", sans-serif;
-    margin-inline: 90px;
+}
+
+.container {
+    margin-inline: 120px;
 }

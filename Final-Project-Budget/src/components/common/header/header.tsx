@@ -1,11 +1,11 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import Button from '../Button/button';
+import Button from '../../UI/Button/button';
 import "./header.scss"
 
 const Header = () => {
     const navigate = useNavigate();
   return (
-    <header className='header-section'>
+    <header className='header-section container'>
         <NavLink className='header-section-logo' to="/" end>
             <h1>Monux</h1>
         </NavLink>
@@ -19,7 +19,7 @@ const Header = () => {
             <NavLink className='header-section-navbar-link' to="/faq">FAQ</NavLink>
             <NavLink className='header-section-navbar-link' to="/blog">Blog</NavLink>
             <NavLink className='header-section-navbar-link' to="/subscription">Subscription</NavLink>
-            <Button text='Login' onClick={() => navigate('/login')} variant='green'/>
+            <Button text='Login' onClick={() => navigate('/login')} variant='blue'/>
         </nav>
     </header>
   )
