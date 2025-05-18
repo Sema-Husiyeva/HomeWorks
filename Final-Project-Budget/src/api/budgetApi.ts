@@ -13,7 +13,7 @@ export const fetchBudgetArticles = (query: string = 'budget OR finance OR saving
       q: query.toLowerCase(),   
       language: 'en',              
       sortBy: 'publishedAt',     
-      pageSize: 6,               
+      pageSize: 65,               
     },
   });
 };

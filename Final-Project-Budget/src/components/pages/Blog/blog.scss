@@ -2,8 +2,9 @@
 @import "../../../styles/mixins";
 
 .blogs-section {
-    @include flex(space-between, flex-start, 20px, row, wrap);
-    padding: 50px 0;
+    @include flex(center, center, 50px, row, wrap);
+    padding: 50px 100px;
+    background-color: $main-bg-color;
 
     &-card {
         @include flex(space-between, flex-start, 20px, column);
@@ -17,6 +18,10 @@
             height: 240px;
             object-fit: cover;
             border-radius: 10px;
+            transition: all 0.2s;
+            &:hover {
+                transform: scale(1.2);
+            }
         }
         &-date {
             color: $second-font-color;
@@ -35,4 +40,38 @@
         }
        
     }
+
+    &-pagination{
+        @include flex(center, normal, 6px);
+        margin-top: 24px;
+
+        & button, & .dots {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            background-color: $white-color;
+            color: $second-font-color;
+            cursor: pointer;
+            border-radius: 6px;
+            min-width: 40px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        & .dots {
+            pointer-events: none;
+            color: $second-font-color;
+        }
+        & button:hover:not(.active):not(:disabled) {
+            background-color: #f1f1f1;
+        }
+        & button:disabled {
+            opacity: 0.5;
+            cursor: default;
+        }   
+        & button.active {
+            border: 2px solid $main-color;
+            color: $main-color;
+            font-weight: bold;
+        }
+    }   
 }
