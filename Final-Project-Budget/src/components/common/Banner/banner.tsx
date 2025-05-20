@@ -1,4 +1,5 @@
 import { type FC } from 'react';
+import { useNavigate } from 'react-router';
 import classNames from 'classnames';
 import Button from '../../UI/Button/button';
 import googlePlayIcon from '../../../assets/svg/google-play.svg';
@@ -10,13 +11,15 @@ interface IBanner {
     description: string;
     image: string;
     showButtons?: boolean;
+    returnButton?: boolean;
     className?: string;
     variant?: string;
     buttonVariants?: string[];
     buttonIcons?: string[];
 }
 
-const Banner: FC<IBanner> = ({ title, description, image, showButtons = true, className, variant, buttonVariants = ['blue', 'blue'] , buttonIcons = [googlePlayIcon, appStoreIcon], } ) => {
+const Banner: FC<IBanner> = ({ title, description, image, showButtons = true, returnButton = false, className, variant, buttonVariants = ['blue', 'blue'] , buttonIcons = [googlePlayIcon, appStoreIcon], } ) => {
+  const navigate = useNavigate();
   return (
     <section className={classNames('banner-section', className, {
             'white': variant === 'white',
@@ -28,6 +31,11 @@ const Banner: FC<IBanner> = ({ title, description, image, showButtons = true, cl
           <div className="banner-section-content-buttons">
             <Button text="Google Play" onClick={() => window.open('https://play.google.com/store/search?q=wallet%20budget&c=apps', '_blank')} variant={buttonVariants[0]} icon={buttonIcons[0]}  />
             <Button text="App Store" onClick={() => window.open('https://apps.apple.com/az/app/wallet-budget-money-manager/id1032467659', '_blank')} variant={buttonVariants[0]} icon={buttonIcons[1]}  />
+          </div>
+        )}
+        {returnButton && (
+          <div className="banner-section-content-buttons">
+            <Button text="Return to home page" onClick={() => navigate('/')} variant='blue'  />
           </div>
         )}
       </div>

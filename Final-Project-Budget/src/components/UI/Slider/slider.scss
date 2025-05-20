@@ -1,0 +1,57 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.slider-section{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    & h2 {
+        color: $second-font-color;
+        font-size: 3rem;
+    }
+
+    &-buttons {
+        position: absolute;
+        left: 82%;
+        right: 9%;
+
+        & .swiper-button-prev, .swiper-button-next {
+         border: none;
+         transform: none;
+         padding: 5px 20px;
+         border-radius: 6px;
+         cursor: pointer;
+         font-size: 18px;
+
+         &::after {
+             font-size: 1.5rem;
+         }
+    }
+    }
+  }
+
+   &-card {
+        background-color: #AFCED4;
+        border-radius: 12px;
+        @include flex(center,flex-start, 30px, column);
+        padding: 40px 60px;
+        height: 280px;
+        & p {
+            color: $first-font-color;
+            font-weight: 400;
+        }
+    }
+}
+
+.filled {
+  background-color: #4A919E;
+  color: white;
+}
+

@@ -6,6 +6,7 @@ import fbIcon from '../../../assets/svg/share-fb.svg';
 import linkedinIcon from '../../../assets/svg/share-in.svg';
 import twitterIcon from '../../../assets/svg/share-twitter.svg';
 import newsImg from '../../../assets/images/news.jpeg';
+import notFoundImg from '../../../assets/images/404.png';
 import "./blogDetail.scss";
 
 interface IBlogDetailProps {
@@ -18,7 +19,7 @@ const BlogDetail = ({ articles }: IBlogDetailProps) => {
 
   const currentUrl = window.location.href;
 
-  if (!article) return <p>Article not found</p>;
+  if (!article) return <Banner title='404 Error' description='Page Not Found' image={notFoundImg} showButtons={false} returnButton = {true}/>;
 
   const title = article.title;
 
@@ -39,12 +40,12 @@ const BlogDetail = ({ articles }: IBlogDetailProps) => {
 
         <div className="blog-detail-section-info">
           <h1 className='blog-detail-section-info-title'>{article.title}</h1>
-          <img src={article.urlToImage} alt={article.title} className="blog-detail-section-info-img" />
+          <img src={article.urlToImage || newsImg} alt={article.title} className="blog-detail-section-info-img" />
           <h2 className='blog-detail-section-info-desc'>{article.description}</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. </p>
-          <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula. In eu dui molestie, molestie lectus eu, semper lectus. </p>
-          <p>Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-          <p>Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et fringilla. </p>
+          <p className='blog-detail-section-info-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. </p>
+          <p className='blog-detail-section-info-text'>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula. In eu dui molestie, molestie lectus eu, semper lectus. </p>
+          <p className='blog-detail-section-info-text'>Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+          <p className='blog-detail-section-info-text'>Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et fringilla. </p>
 
           <div className="blog-detail-section-info-share-buttons">
           <h2>Share</h2>
@@ -69,7 +70,7 @@ const BlogDetail = ({ articles }: IBlogDetailProps) => {
             {nextArticles.map((item: IArticle) => (
              <div className="blog-detail-section-info-next-articles-card" key={item.id}>
                 <NavLink to={`/blog/${item.id}`} state={item}>
-                 <img className="blog-detail-section-info-next-articles-card-img" src={item.urlToImage} onError={(e) => {e.currentTarget.src = newsImg;}} alt={article.title} />
+                 <img className="blog-detail-section-info-next-articles-card-img" src={item.urlToImage || newsImg} onError={(e) => {e.currentTarget.src = newsImg;}} alt={article.title} />
                 </NavLink>
                 <p className="blog-detail-section-info-next-articles-card-date">{new Date(item.publishedAt).toLocaleDateString('az-AZ')}</p>
                 <h3 className="blog-detail-section-info-next-articles-card-title">{item.title}</h3>

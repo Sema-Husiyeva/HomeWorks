@@ -11,14 +11,19 @@ interface IBlogProps {
 }
 
 const Blog: React.FC<IBlogProps> = ({ articles }) => {
-  
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const articlesPerPage = 6;
 
-  const totalPages = Math.ceil(articles.length / articlesPerPage);
+  const uniqueArticles = articles.filter((article, index, self) =>
+  index === self.findIndex((a) =>
+    a.title === article.title && a.publishedAt === article.publishedAt
+  )
+  );
+
+  const totalPages = Math.ceil(uniqueArticles.length / articlesPerPage);
   const start = (currentPage - 1) * articlesPerPage;
-  const currentArticles = articles.slice(start, start + articlesPerPage);
+  const currentArticles = uniqueArticles.slice(start, start + articlesPerPage);
 
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) setCurrentPage(page);
@@ -54,12 +59,10 @@ const Blog: React.FC<IBlogProps> = ({ articles }) => {
   const handleClick = (article: IArticle) => {
     navigate(`/blog/${article.id}`, { state: { article, articles } });
   };
-
-
+  
   return (
     <>
       <Banner title='Blog' description="Discover insights, tips, and stories that inspire. Our blog brings you the latest updates and practical advice to manage your finances better. Learn from experts and real-life experiences. Stay informed, stay empowered." image={bannerImg}/>
-
       <div className="blogs-section">
        {currentArticles.map((article) => (
        <div

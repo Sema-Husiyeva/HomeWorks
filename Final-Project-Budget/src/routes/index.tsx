@@ -26,7 +26,7 @@ const AppRoutes = () => {
         fetchBudgetArticles("budget OR finance OR saving money")
           .then((res) => {
             const mapped = res.data.articles.map((item: any) => ({
-              id:item.title.toLowerCase().replace(/\s+/g, "-"),
+              id:`${item.title.toLowerCase().replace(/\s+/g, "-")}-${item.publishedAt}`,
               title: item.title,
               description: item.description,
               url: item.url,
@@ -39,6 +39,7 @@ const AppRoutes = () => {
             console.error("Error fetching articles", err);
           });
       }, []);
+
   return (
     <Routes>
         <Route path="/" element={<Layout />}>
