@@ -43,9 +43,34 @@
         @include flex(center,flex-start, 30px, column);
         padding: 40px 60px;
         height: 280px;
+        &-img-star {
+          width: 100px;
+          height: 20px;
+        }
         & p {
             color: $first-font-color;
             font-weight: 400;
+        }
+        & h3 {
+          color: $first-font-color;
+        }
+        &-user {
+           @include flex(center,center, 30px);
+           & img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+           }
+        }
+
+        &-blue-bg {
+           background-color: #AFCED4;
+        }
+        &-none-bg {
+          background-color: $main-bg-color;
+        }
+        &-white-bg {
+          background-color: $white-color;
         }
     }
 }
