@@ -5,7 +5,7 @@ import './button.scss'
 interface IButton {
     text: string;
     type?: 'button' | 'submit';
-    onClick: () => void;
+    onClick?: () => void;
     isActive?: boolean;
     variant?: string;
     className?: string;

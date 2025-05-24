@@ -15,6 +15,10 @@ const Subscription = () => {
     const handleToggle = () => {
       setIsMonthly(!isMonthly);
     };
+
+    const handleNavigate = (amount: string, planType: string) => {
+      navigate('/payment', { state: { amount, planType } });
+    }; 
   return (
     <>
       <section className='subscription-banner-section'>
@@ -37,7 +41,7 @@ const Subscription = () => {
               <p>Access to basic features</p>
               <p>Monthly budget tracking</p>
               <p>Cancel anytime</p>
-              <Button text="Get Started" onClick={() => navigate('/payment') } className='subscription-banner-section-card-btn' variant="blue"/>
+              <Button text="Get Started" onClick={() => handleNavigate(isMonthly ? "$3" : "$30", isMonthly ? "Basic (Monthly)" : "Basic (Yearly)")} className='subscription-banner-section-card-btn' variant="blue"/>
             </div>    
 
             <div className='subscription-banner-section-card right'>
@@ -46,7 +50,7 @@ const Subscription = () => {
               <p>Advanced analytics & insights</p>
               <p>Team collaboration tools</p>
               <p>Customizable budgeting tools</p>
-            <Button text="Get Started" onClick={() => navigate('/payment')} className='subscription-banner-section-card-btn' variant="white"/>
+            <Button text="Get Started" onClick={() => handleNavigate(isMonthly ? "$25" : "$250", isMonthly ? "Premium (Monthly)" : "Premium (Yearly)")} className='subscription-banner-section-card-btn' variant="white"/>
         </div>    
         </div>
 

@@ -24,7 +24,6 @@
         border-radius: 10px;
         margin: 30px 0;
         cursor: pointer;
-        transition: all 0.5s;
         &:hover {
             background-color: $second-bg-color;
         }
@@ -46,16 +45,15 @@
             color: $third-bg-color;
             font-size: 0.95rem;
             font-weight: 400;
-            max-height: 0;
+            height: 0;
             overflow: hidden;
-            transition: all 1s ease;
-            opacity: 0;
-
+            transition: height 0.6s ease, opacity 0.6s ease;
+            
             &-open {
-                max-height: 200px;
-                margin: 30px 0;
-                opacity: 1;
-            }
+            height: 50px;
+            opacity: 1;
+            margin-top: 30px;
+}
         }
     }
 }

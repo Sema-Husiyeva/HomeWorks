@@ -21,13 +21,13 @@ const Faq = () => {
 
         {faqData.map((item:IFAQItem, index: number) => (
           <div key={index} className='faq-section-item' onClick={() => handleItemClick(index)}>
-            <div className={`faq-section-item-question ${activeIndex === index ? 'faq-section-item-question-open' : ''}`}>
+            <div className='faq-section-item-question'>
              <h3>{item.question}</h3>
              <span>{activeIndex === index ? "−" : "+"}</span>
             </div>
-            {activeIndex === index && (
-             <p className={`faq-section-item-answer ${activeIndex === index ? 'faq-section-item-answer-open' : ''}`}>{item.answer}</p>
-            )}
+            <div className={`faq-section-item-answer ${activeIndex === index ? 'faq-section-item-answer-open' : ''}`}>
+             <p>{item.answer}</p>
+            </div>
           </div>
         ))}
       </div>
