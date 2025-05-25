@@ -1,0 +1,112 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.payment-section {
+    background-color: $main-bg-color;
+    @include flex(center, center, 50px);
+    padding: 70px 0;
+    &-left {
+        background-color: $white-color;
+        padding: 80px;
+        border-radius: 10px;
+        &-input {
+            @include flex(center, flex-start, 10px, column);
+            margin-bottom: 20px;
+
+            & input {
+                width: 534px;
+                height: 60px;
+                padding: 0 10px;
+                border: 1px solid #D9D9D9;
+                border-radius: 5px;
+            }
+            & select {
+                 width: 534px;
+                 height: 55px;
+                 padding: 0 10px;
+                 border: 1px solid #D9D9D9;
+                 border-radius: 5px
+            }
+            & label {
+                color: $first-font-color
+            }
+        }
+        &-label {
+            @include flex(flex-start, center, 185px);
+            margin-bottom: 10px;
+            & p {
+                color: $first-font-color;
+            }
+            &-cvc {
+                @include flex(center, center, 10px);
+            }
+        }
+        &-expiration {
+            @include flex(flex-start, center, 15px);
+            & input {
+                border: 1px solid #D9D9D9;
+                border-radius: 5px
+            }
+            & span {
+                font-size: 2rem;
+                font-weight: 300;
+            }
+
+            & input:nth-child(1) {
+                width: 100px;
+                height: 55px;
+                padding-left: 40px;
+            }
+            & input:nth-child(3) {
+                width: 100px;
+                height: 55px;
+                padding-left: 40px;
+            }
+            & input:nth-child(4) {
+                height: 55px;
+                width: 280px;
+                padding-left: 10px;
+            }
+        }
+
+        &-buttons {
+            @include flex(flex-end, center, 15px);
+            border-top: 1px solid #E2E8F0;
+            padding-top: 30px
+        }
+
+        &-error {
+        font-size: 0.90rem;
+        color: red;
+        }
+}
+
+    &-right {
+        background-color: $white-color;
+        padding: 62px;
+        border-radius: 10px;
+        & input {
+                width: 260px;
+                height: 50px;
+                padding-left: 10px;
+                border: 1px solid #D9D9D9;
+                border-radius: 5px;
+            }
+        & h3 {
+                color: $first-font-color;
+                font-size: 1.2rem;
+        }
+        &-order {
+             @include flex(space-between, flex-end, 15px);
+             margin: 56px 0;
+            &-promo {
+                margin-bottom: 10px;
+                @include flex(space-between, flex-end, 15px);
+            }
+        }
+        & p {
+            color: $third-font-color;
+            margin-bottom: 20px;
+        }
+    }
+}

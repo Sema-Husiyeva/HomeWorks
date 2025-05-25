@@ -10,6 +10,7 @@ import Subscription from '../components/pages/Subscription/subscription'
 import Login from '../components/pages/Login/login'
 import Payment from '../components/pages/Payment/payment'
 import BlogDetail from '../components/pages/BlogDetail/blogDetail'
+import SuccessfulPayment from '../components/pages/SuccessfulPayment/successfulPayment'
 
 export interface IArticle {
     id: string;
@@ -50,6 +51,7 @@ const AppRoutes = () => {
           <Route path="subscription" element={<Subscription />} />
           <Route path="payment" element={<Payment />} />
           <Route path="/blog/:id" element={<BlogDetail articles={articles} />} />
+          <Route path="/payment/successfulPayment" element={<SuccessfulPayment />} />
         </Route>
 
         <Route path="login" element={<Login />} />
