@@ -1,11 +1,10 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../../../store/features/authSlice';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+import { signup } from '../../../store/features/authSlice';
 import Button from '../../UI/Button/button';
-import Modal from '../../UI/Modal/modal';
 import firstImg from '../../../assets/images/first-login-img.png';
 import secondImg from '../../../assets/images/second-login-img.png';
 import thirdImg from '../../../assets/images/third-login-img.png';
@@ -14,20 +13,27 @@ import eyeInvisible from '../../../assets/svg/eye-invisible.svg';
 import success from '../../../assets/svg/success.svg';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './login.scss';
+import './signup.scss';
+import Modal from '../../UI/Modal/modal';
 
-
-
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const user = useSelector((state: any) => state.auth.user);
+  const [repeatPassword, setRepeatPassword] = useState('');
   const [errors, setErrors] = useState<{ email?: string; password?: string; repeatPassword?: string }>({});
 
   const [showPassword, setShowPassword] = useState(false);
   const [isActiveModal, setIsActiveModal] = useState(false);
+
+  const handleCancel = () => {
+   setIsActiveModal(false);
+  }
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(prev => !prev);
+  };
 
   const validateForm = () => {
    const newErrors: typeof errors = {};
@@ -44,54 +50,47 @@ const Login = () => {
      newErrors.password = 'Password must be at least 8 characters';
    }
 
+   if (!repeatPassword) {
+     newErrors.repeatPassword = 'Please repeat your password';
+  } else if (repeatPassword !== password) {
+     newErrors.repeatPassword = 'Passwords do not match';
+   }
+
    setErrors(newErrors);
    return Object.keys(newErrors).length === 0;
   };
 
-  const handleLogin = () => {
+  const handleSignup = () => {
     if (!validateForm()) return;
 
-    if (!user) {
-    setErrors({ email: 'No user found. Please sign up first.' });
-    return;
-    }
-
-    if (email !== user.email || password !== user.password) {
-    setErrors({ password: 'Invalid email or password' });
-    return;
-    }
-    
-    dispatch(login({ email, password }));
+    dispatch(signup({ email, password }));
     setEmail('');
     setPassword('');
+    setRepeatPassword('');
     setErrors({});
     setIsActiveModal(true);
   };
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(prev => !prev);
-  };
-
   return (
-    <section className='login-section'>
-     <div className='login-section-slider'> 
-      <Swiper pagination={{ clickable: true }} modules={[Pagination]} className="mySwiper">
+    <section className='signup-section'>
+        <div className='login-section-slider'> 
+        <Swiper pagination={{ clickable: true }} modules={[Pagination]} className="mySwiper">
         <SwiperSlide>
-          <div className='login-section-slider-info'>
+          <div className='signup-section-slider-info'>
             <img src={firstImg} alt="first-login-img" />
             <h2>Register by entering your email or phone number</h2>
             <p>We suggest you spend smarter, not less</p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='login-section-slider-info'>
+          <div className='signup-section-slider-info'>
             <img src={secondImg} alt="second-login-img" />
             <h2>Create an account to control your cash flow</h2>
             <p>The most convenient way to track your expenses</p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='login-section-slider-info'>
+          <div className='signup-section-slider-info'>
             <img src={thirdImg} alt="third-login-img" />
             <h2>Start controlling your budget by adding your expenses or income.</h2>
             <p>The app that shapes your budget</p>
@@ -100,39 +99,46 @@ const Login = () => {
       </Swiper>
      </div> 
 
-     <div className='login-section-form'>
-      <div className='login-section-form-title'>
-        <h1>Welcome</h1>
-        <p>Enter your login and password to log in</p>
-      </div>
-
-      <div className='login-section-form-input'>
+     <div className='signup-section-form'>
+      <div className='signup-section-form-input'>
         <label>E-mail</label>
-        <input className='login-section-form-input-email' type="text" placeholder='Type your e-mail' onChange={(e) => setEmail(e.target.value)} />
+        <input className='signup-section-form-input-email' type="text" placeholder='Type your e-mail' onChange={(e) => setEmail(e.target.value)} value={email} />
         {errors.email && <p className="signup-section-form-input-error">{errors.email}</p>}
       </div>
-      <div className='login-section-form-input'>
+      <div className='signup-section-form-input'>
         <label>Password</label>
-        <div className='login-section-form-input-password'>
-          <input type={showPassword ? 'text' : 'password'} placeholder='Type your password' onChange={(e) => setPassword(e.target.value)} />
+        <div className='signup-section-form-input-password'>
+          <input type={showPassword ? 'text' : 'password'} placeholder='Type your password' onChange={(e) => setPassword(e.target.value)} value={password} />
           <img src={showPassword ? eyeVisible : eyeInvisible} alt={showPassword ? 'eye-visible' : 'eye-invisible'} onClick={togglePasswordVisibility} />
         </div>
         {errors.password && <p className="signup-section-form-input-error">{errors.password}</p>}
       </div>
-      <Button text='Login' onClick={handleLogin} variant='blue'/>
+      <div className='signup-section-form-input'>
+        <label>Repeate password</label>
+        <div className='signup-section-form-input-password'>
+          <input type={showPassword ? 'text' : 'password'} placeholder='Type your password again' value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} />
+          <img src={showPassword ? eyeVisible : eyeInvisible} alt={showPassword ? 'eye-visible' : 'eye-invisible'} onClick={togglePasswordVisibility} />
+        </div>
+        {errors.repeatPassword && <p className="signup-section-form-input-error">{errors.repeatPassword}</p>}
+      </div>
+      <Button text='Sign up' onClick={handleSignup} variant='blue'/>
       {isActiveModal && (
-       <Modal active={isActiveModal} onClick={() => navigate('/')} text='Go to home page'>
-        <img src={success} alt="success" />
-         <p>You have successfully logged in!</p>
-       </Modal>
+        <Modal active={isActiveModal} onClick={handleCancel} text='Close'>
+          <img src={success} alt="success" />
+          <p>You have successfully registered! You can now go to the login page.</p>
+        </Modal>
       )}
-      <div className='login-section-form-signin'>
-        <p>Don't have an account?</p>
-        <Button text='Sign up' onClick={() => navigate('/signup')} variant='white'/>
+      
+      <div className='signup-section-form-signin'>
+        <p>Already have an account?</p>
+        <Button text='Login' onClick={() => navigate('/login')} variant='white'/>
       </div>
      </div>
     </section>
   )
 }
 
-export default Login
+export default Signup
+
+ 
+  

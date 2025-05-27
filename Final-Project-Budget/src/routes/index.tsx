@@ -11,6 +11,7 @@ import Login from '../components/pages/Login/login'
 import Payment from '../components/pages/Payment/payment'
 import BlogDetail from '../components/pages/BlogDetail/blogDetail'
 import SuccessfulPayment from '../components/pages/SuccessfulPayment/successfulPayment'
+import Signup from '../components/pages/Signup/signup'
 
 export interface IArticle {
     id: string;
@@ -55,6 +56,7 @@ const AppRoutes = () => {
         </Route>
 
         <Route path="login" element={<Login />} />
+        <Route path='signup' element={<Signup />}/>
     </Routes>
   )
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { useSelector } from 'react-redux';
 import Button from '../../UI/Button/button';
 import Banner from '../../common/Banner/banner';
 import planImg from '../../../assets/images/plan.jpeg';
@@ -11,6 +12,7 @@ import './subscription.scss';
 const Subscription = () => {
     const navigate = useNavigate();
     const [isMonthly, setIsMonthly] = useState(true);
+    const user = useSelector((state: any) => state.auth.user);
 
     const handleToggle = () => {
       setIsMonthly(!isMonthly);
