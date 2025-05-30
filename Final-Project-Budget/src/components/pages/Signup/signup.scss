@@ -90,3 +90,23 @@
         }
     }
 }
+
+
+@media screen and (max-width: 768px) {
+    .signup-section {
+        flex-direction: column;
+        &-slider {
+            width: 100%;
+        }
+        &-form {
+            width: 100%;
+            padding: 25px;
+            &-input-email {
+                width: 390px;
+            }
+            &-input-password {
+                width: 390px;
+            }
+        }
+    }
+}

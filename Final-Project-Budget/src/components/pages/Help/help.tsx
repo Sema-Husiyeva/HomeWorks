@@ -68,9 +68,9 @@ const Help = () => {
          </div>
         </div>
 
-        <Slider items={items} variant1="none" />
+        <Slider items={items} variant1="none" navigationId="slider1" className='mySwiper slider-section-first' />
 
-        <Slider title='Review our clients' items={reviews} variant1= 'white' variant2='star' />
+        <Slider title='Review our clients' items={reviews} variant1= 'white' variant2='star' className='mySwiper slider-section-second' navigationId="slider2" />
       </div>
 
       <Banner title='Start using our app' description='Take control of your finances with ease. Track your spending, set smart budgets, and stay on top of your goals. Our app is designed for simplicity and efficiency. Download now and make money management effortless.' image={appImg} variant='white' buttonVariants={['white', 'white']} buttonIcons={[googlePlayColored, appStoreColored]}/>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSubscriptionPlan } from '../../../store/features/authSlice';
 import Button from '../../UI/Button/button';
 import Banner from '../../common/Banner/banner';
 import planImg from '../../../assets/images/plan.jpeg';
@@ -9,17 +10,25 @@ import googlePlayColored from '../../../assets/svg/google-play-colored.svg';
 import appStoreColored from '../../../assets/svg/app-store-colored.svg';
 import './subscription.scss';
 
+
 const Subscription = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [isMonthly, setIsMonthly] = useState(true);
     const user = useSelector((state: any) => state.auth.user);
+    const loginSuccess = useSelector((state: any) => state.auth.loginSuccess);
 
     const handleToggle = () => {
       setIsMonthly(!isMonthly);
     };
 
     const handleNavigate = (amount: string, planType: string) => {
-      navigate('/payment', { state: { amount, planType } });
+      if (!loginSuccess) {
+       dispatch(setSubscriptionPlan({ amount, planType }));
+       navigate('/login');
+      } else {
+       navigate('/payment', { state: { amount, planType } });
+      }
     }; 
   return (
     <>
@@ -53,15 +62,16 @@ const Subscription = () => {
               <p>Team collaboration tools</p>
               <p>Customizable budgeting tools</p>
             <Button text="Get Started" onClick={() => handleNavigate(isMonthly ? "$25" : "$250", isMonthly ? "Premium (Monthly)" : "Premium (Yearly)")} className='subscription-banner-section-card-btn' variant="white"/>
-        </div>    
+            </div>    
         </div>
 
       </section>
 
       <section className='plans-section container'>
+        <img className='plans-section-img-responsive' src={planImg} alt="plan-image" />
         <h1 className='plans-section-title'>Advantages of Plans</h1>
         <div className='plans-section-info'>
-            <img src={planImg} alt="plan-image" />
+            <img className='plans-section-img' src={planImg} alt="plan-image" />
             <div>
                 <h3 className='plans-section-info-title'>You will use the services of our application by subscribing to the plans:</h3>
                 <ul className='plans-section-info-list'>

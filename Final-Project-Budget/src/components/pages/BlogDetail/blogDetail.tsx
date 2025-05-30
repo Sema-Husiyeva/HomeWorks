@@ -1,5 +1,7 @@
 import { NavLink, useParams } from 'react-router-dom';
 import {FacebookShareButton,TwitterShareButton,LinkedinShareButton} from "react-share";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 import type { IArticle } from '../../../routes';
 import Banner from '../../common/Banner/banner';
 import fbIcon from '../../../assets/svg/share-fb.svg';
@@ -8,6 +10,9 @@ import twitterIcon from '../../../assets/svg/share-twitter.svg';
 import newsImg from '../../../assets/images/news.jpeg';
 import notFoundImg from '../../../assets/images/404.png';
 import "./blogDetail.scss";
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 
 interface IBlogDetailProps {
     articles: IArticle[];
@@ -79,7 +84,43 @@ const BlogDetail = ({ articles }: IBlogDetailProps) => {
             ))}
             </div>
           </div>
-        </div>  
+
+        <div className="blog-detail-section-info-next-articles-responsible-cards">
+          <Swiper
+        modules={[Navigation]}
+        navigation={{
+          nextEl: 'swiper-button-prev',
+          prevEl: 'swiper-button-next',
+        }}
+        slidesPerView={3}
+        breakpoints={{
+        0: {
+          slidesPerView: 1.5,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+  }}
+        spaceBetween={30}
+      >
+        {nextArticles.map((item) => (
+          <SwiperSlide key={item.id}>
+            <div className="blog-detail-section-info-next-articles-responsible-cards-card">
+               <NavLink to={`/blog/${item.id}`} state={item}>
+                 <img className="blog-detail-section-info-next-articles-card-img" src={item.urlToImage || newsImg} onError={(e) => {e.currentTarget.src = newsImg;}} alt={article.title} />
+                </NavLink>
+                <p className="blog-detail-section-info-next-articles-card-date">{new Date(item.publishedAt).toLocaleDateString('az-AZ')}</p>
+                <h3 className="blog-detail-section-info-next-articles-card-title">{item.title}</h3>
+                <p className="blog-detail-section-info-next-articles-card-desc">{item.description}</p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      </div>
+    </div>  
     </section>
   );
 };

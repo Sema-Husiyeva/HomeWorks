@@ -75,3 +75,16 @@
         }
     }   
 }
+
+
+@media screen and (max-width: 768px) {
+    .blogs-section {
+        flex-direction: column;
+        padding: 50px 25px;
+        gap: 25px;
+        &-card {
+            max-width: 100%;
+            height: 450px;
+        }
+    }
+}

@@ -140,6 +140,41 @@
             }
         }
     }
+
+    &-img-responsive {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .subscription-banner-section {
+        padding: 50px 15px;
+        height: 900px;
+        &-cards {
+            flex-direction: column;
+            top: 30%;
+            gap: 40px;
+        }
+        &-title {
+            font-size: 3rem;
+        }
+    }
+
+    .plans-section {
+        &-info {
+            flex-direction: column;
+            gap: 20px;
+        }
+        &-img {
+            display: none;
+        }
+        &-img-responsive {
+            display: block;
+            width: 380px;
+            margin-top: 100px;
+        }
+    }
 }
   
  

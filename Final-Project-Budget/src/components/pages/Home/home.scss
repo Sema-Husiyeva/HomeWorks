@@ -4,7 +4,7 @@
 .home-section {
     &-start {
         background-color: $main-bg-color;
-        padding: 80px 0;
+        padding: 80px;
         &-title {
             text-align: center;
             font-size: 3rem;
@@ -12,8 +12,10 @@
             margin-bottom: 40px
         }
         &-icons {
-            @include flex(center, center, 30px);
-            & div:nth-child(1){
+            @include flex(center, center);
+            &-info {
+            @include flex(center, center, 30px, column);
+            &-activity{
                 @include flex(center, center, 0);
                 width: 90px;
                 background-color: $pink-color;
@@ -21,7 +23,7 @@
                 border-radius: 20px;
                 box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
             }
-            & div:nth-child(3){
+            &-wallet {
                 @include flex(center, center, 0);
                 width: 90px;
                 background-color: $main-color;
@@ -29,7 +31,7 @@
                 border-radius: 20px;
                 box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
             }
-            & div:nth-child(5){
+            &-paper {
                 @include flex(center, center, 0);
                 width: 90px;
                 background-color: $orange-color;
@@ -37,16 +39,14 @@
                 border-radius: 20px;
                 box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
             }
-        }
-
-        &-text {
-            @include flex(center, center, 70px);
-            margin-top: 50px;
             & p {
-                width: 310px;
                 text-align: center;
-                color: $third-font-color;
+                color: $third-font-color
             }
+          } 
+          &-line {
+                margin-bottom: 65px;
+          }
         }
 
         &-video {
@@ -68,7 +68,7 @@
 
         &-title {
         color: $first-font-color;
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
     &-text {
         color: $third-font-color;
@@ -171,4 +171,35 @@
         }
     }
 }
+}
+
+@media screen and (max-width: 768px) {
+    .home-section {
+        &-start {
+            padding: 25px;
+            &-icons {
+                flex-direction: column;
+                gap: 50px;
+                &-line {
+                    display: none;
+                }
+            }
+            &-video {
+               & video {
+                  width: 375px;
+               }
+            }
+        }
+        & .slider-section-header-buttons {
+            display: none;
+        }
+        &-subscription {
+            &-text {
+                display: none;
+            }
+            &-cards {
+                flex-direction: column;
+            }
+        }
+    }
 }

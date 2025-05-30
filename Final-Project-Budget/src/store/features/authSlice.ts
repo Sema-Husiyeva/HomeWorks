@@ -10,12 +10,17 @@ interface AuthState {
   user: IUser | null;
   isSignedUp: boolean;
   loginSuccess: boolean;
+  subscriptionPlan: {
+    amount: string;
+    planType: string;
+  } | null;
 };
 
 const initialState: AuthState = {
   user: null,
   isSignedUp: false,
   loginSuccess: false,
+  subscriptionPlan: null,
 };
 
 const authSlice = createSlice({
@@ -24,6 +29,7 @@ const authSlice = createSlice({
   reducers: {
     signup: (state, action: PayloadAction<IUser>) => {
       state.user = action.payload;
+      state.isSignedUp = true;
     },
     login: (state, action: PayloadAction<IUser>) => {
       if (
@@ -31,14 +37,14 @@ const authSlice = createSlice({
         state.user.email === action.payload.email &&
         state.user.password === action.payload.password
       ) {
-        state.isSignedUp = true;
         state.loginSuccess = true;
-      } else {
-        alert('Email və ya şifrə yalnışdır!');
-      }
+      } 
+    },
+    setSubscriptionPlan: (state, action: PayloadAction<{ amount: string; planType: string }>) => {
+     state.subscriptionPlan = action.payload;
     },
   },
 });
 
-export const { signup, login } = authSlice.actions;
+export const { signup, login, setSubscriptionPlan } = authSlice.actions;
 export default authSlice.reducer;

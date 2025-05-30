@@ -72,6 +72,43 @@ const Footer = () => {
       </div>
      </div> 
 
+
+    
+    <div className='footer-section-navbar-responsible'>
+        <div className='footer-section-navbar-responsible-link'>
+          <NavLink className='footer-section-navbar-link' to="/" end>
+          Home
+          </NavLink>
+          <NavLink className='footer-section-navbar-link' to="/help" end>
+            Help
+          </NavLink>
+        </div>
+        <div className='footer-section-navbar-responsible-link'>
+          <NavLink className='footer-section-navbar-link' to="/faq">FAQ</NavLink>
+          <NavLink className='footer-section-navbar-link' to="/blog">Blog</NavLink>
+        </div>
+        <NavLink className='footer-section-navbar-link' to="/subscription">Subscription</NavLink>
+    </div>
+
+
+     <div className='footer-section-contact-responsible'>
+        <p className='footer-section-contact-title'>Newsletter</p>
+        <div className='footer-section-contact-email'>
+            <div className='footer-section-contact-email-input'>
+            <input type="email" value={email} onChange={handleChange} placeholder='E-mail' />
+            <Button text='Subscribe' onClick={handleSubscribe} variant='blue' className='footer-section-contact-email-input-btn' />
+            </div>
+            {error && <p className="footer-section-contact-email-error">{error}</p>}
+        </div>
+        <div className='footer-section-contact-social-media'>
+            <img src={facebookIcon} alt="facebook-icon" />
+            <img src={instagramIcon} alt="instagram-icon" />
+            <img src={youtubeIcon} alt="youtube-icon" />
+            <img src={twitterIcon} alt="twitter-icon" />
+            <img src={linkedinIcon} alt="linkedin-icon" />
+        </div>
+      </div>
+
      <p className='footer-section-copyright'>© 2025 «Budget» ASC. All Rights Reserved.</p>
     </footer>
   )

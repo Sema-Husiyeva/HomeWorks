@@ -73,7 +73,7 @@ const Signup = () => {
 
   return (
     <section className='signup-section'>
-        <div className='login-section-slider'> 
+        <div className='signup-section-slider'> 
         <Swiper pagination={{ clickable: true }} modules={[Pagination]} className="mySwiper">
         <SwiperSlide>
           <div className='signup-section-slider-info'>

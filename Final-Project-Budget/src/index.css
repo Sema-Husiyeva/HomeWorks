@@ -13,3 +13,9 @@ body {
 .container {
     margin-inline: 120px;
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 13px;
+    }
+}

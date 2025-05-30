@@ -23,3 +23,20 @@
         }
     }
 }
+
+
+@media screen and (max-width: 768px) {
+    .help-section {
+        &-main {
+            padding: 50px 20px;
+        }
+        &-services {
+            flex-direction: column;
+            gap: 0;
+            padding: 20px;
+            &-info {
+            width: 390px;
+            }
+        }
+    }
+}

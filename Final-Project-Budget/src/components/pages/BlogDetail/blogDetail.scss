@@ -71,8 +71,49 @@
                     color: $third-font-color;
                 }
             }
+            &-responsible {
+                display: none;
+            }
         }
     }
 }
 
   
+@media screen and (max-width: 768px) {
+    .blog-detail-section {
+        &-banner {
+            & img {
+                width: 400px;
+                margin-top: 20px;
+            }
+            & h1 {
+                width: 400px;
+            }
+        }
+        &-info {
+            padding: 50px 25px;
+            &-img {
+                width: 390px;
+            }
+            &-share-buttons {
+                & div {
+                    display: flex;
+                    & img {
+                        width: 100px;
+                    }
+                }
+            }
+            &-next-articles {
+                display: none;
+                &-responsible-cards {
+                      @include flex(flex-start, flex-start, 50px);
+                      width: 100%;
+                      &-card {
+                        width: 240px;
+                        @include flex(center, flex-start, 10px, column);
+                      }
+                } 
+        }
+    }
+} 
+}

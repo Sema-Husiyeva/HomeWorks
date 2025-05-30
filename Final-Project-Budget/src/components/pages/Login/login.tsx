@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../store/features/authSlice';
@@ -24,10 +24,13 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const user = useSelector((state: any) => state.auth.user);
+  const loginSuccess = useSelector((state: any) => state.auth.loginSuccess);
   const [errors, setErrors] = useState<{ email?: string; password?: string; repeatPassword?: string }>({});
+  const subscriptionPlan = useSelector((state: any) => state.auth.subscriptionPlan);
 
   const [showPassword, setShowPassword] = useState(false);
   const [isActiveModal, setIsActiveModal] = useState(false);
+
 
   const validateForm = () => {
    const newErrors: typeof errors = {};
@@ -66,7 +69,14 @@ const Login = () => {
     setPassword('');
     setErrors({});
     setIsActiveModal(true);
+    navigate('/payment');
   };
+
+  useEffect(() => {
+  if (loginSuccess && subscriptionPlan) {
+    navigate('/payment');
+  }
+}, [loginSuccess, user, navigate]);
 
   const togglePasswordVisibility = () => {
     setShowPassword(prev => !prev);

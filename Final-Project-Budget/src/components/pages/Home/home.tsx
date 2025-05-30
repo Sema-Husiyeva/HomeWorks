@@ -46,17 +46,26 @@ const Home = () => {
         <h1 className='home-section-start-title'>How to start</h1>
 
         <div className='home-section-start-icons'>
-          <div><img src={startActivityIcon} alt="start-activity-icon" /></div>
-          <img src={startLineIcon} alt="start-line-icon" />
-          <div><img src={startWalletIcon} alt="start-wallet-icon" /></div>
-          <img src={startLineIcon} alt="start-line-icon" />
-          <div><img src={startPaperIcon} alt="start-paper-icon" /></div>
-        </div>
-
-        <div className='home-section-start-text'>
-          <p>Register with email or phone number.</p>
-          <p>He creates his initial account to record his transactions.</p>
-          <p>You can add transactions and track your account.</p>
+          <div className='home-section-start-icons-info'>
+            <div className='home-section-start-icons-info-activity'>
+             <img src={startActivityIcon} alt="start-activity-icon" />
+            </div>
+            <p>Register with email or phone number.</p>
+          </div>
+          <img className='home-section-start-icons-line' src={startLineIcon} alt="start-line-icon" />
+          <div className='home-section-start-icons-info'>
+            <div className='home-section-start-icons-info-wallet'>
+             <img src={startWalletIcon} alt="start-wallet-icon" />
+            </div>
+            <p>He creates his initial account to record his transactions.</p>
+          </div>
+          <img className='home-section-start-icons-line' src={startLineIcon} alt="start-line-icon" />
+          <div className='home-section-start-icons-info'>
+            <div className='home-section-start-icons-info-paper'>
+             <img src={startPaperIcon} alt="start-paper-icon" />
+            </div>
+            <p>You can add transactions and track your account.</p>
+          </div>
         </div>
 
         <div className='home-section-start-video'>
