@@ -6,7 +6,7 @@ import instagramIcon from '../../../assets/svg/instagram-icon.svg';
 import youtubeIcon from '../../../assets/svg/youtube-icon.svg';
 import twitterIcon from '../../../assets/svg/twitter-icon.svg';
 import linkedinIcon from '../../../assets/svg/linkedin-icon.svg';
-import './footer.scss'
+import './footer.scss';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -34,11 +34,11 @@ const Footer = () => {
      <div className='footer-section-main'>   
       <div className='footer-section-info'>
         <h1 className='footer-section-info-logo'>Monux</h1>
-        <ul className='footer-section-info-list'>
-            <li>Privacy Policy</li>
-            <li>Terms and Conditions</li>
-            <li>Contact Us</li>
-        </ul>
+        <div className='footer-section-info-list'>
+            <NavLink className='footer-section-info-list-item' to="/privacy">Privacy Policy</NavLink>
+            <NavLink className='footer-section-info-list-item' to="/terms">Terms and Conditions</NavLink>
+            <NavLink className='footer-section-info-list-item' to="/contact">Contact Us</NavLink>
+        </div>
       </div>
 
       <div className='footer-section-contact'>
@@ -74,8 +74,8 @@ const Footer = () => {
 
 
     
-    <div className='footer-section-navbar-responsible'>
-        <div className='footer-section-navbar-responsible-link'>
+    <div className='footer-section-navbar-responsive'>
+        <div className='footer-section-navbar-responsive-link'>
           <NavLink className='footer-section-navbar-link' to="/" end>
           Home
           </NavLink>
@@ -83,7 +83,7 @@ const Footer = () => {
             Help
           </NavLink>
         </div>
-        <div className='footer-section-navbar-responsible-link'>
+        <div className='footer-section-navbar-responsive-link'>
           <NavLink className='footer-section-navbar-link' to="/faq">FAQ</NavLink>
           <NavLink className='footer-section-navbar-link' to="/blog">Blog</NavLink>
         </div>
@@ -91,7 +91,7 @@ const Footer = () => {
     </div>
 
 
-     <div className='footer-section-contact-responsible'>
+     <div className='footer-section-contact-responsive'>
         <p className='footer-section-contact-title'>Newsletter</p>
         <div className='footer-section-contact-email'>
             <div className='footer-section-contact-email-input'>

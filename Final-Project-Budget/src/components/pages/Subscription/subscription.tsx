@@ -15,7 +15,6 @@ const Subscription = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [isMonthly, setIsMonthly] = useState(true);
-    const user = useSelector((state: any) => state.auth.user);
     const loginSuccess = useSelector((state: any) => state.auth.loginSuccess);
 
     const handleToggle = () => {

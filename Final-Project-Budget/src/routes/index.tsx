@@ -12,6 +12,9 @@ import Payment from '../components/pages/Payment/payment'
 import BlogDetail from '../components/pages/BlogDetail/blogDetail'
 import SuccessfulPayment from '../components/pages/SuccessfulPayment/successfulPayment'
 import Signup from '../components/pages/Signup/signup'
+import Privacy from '../components/pages/Privacy/privacy'
+import Terms from '../components/pages/Terms/terms'
+import Contact from '../components/pages/Contact/contact'
 
 export interface IArticle {
     id: string;
@@ -51,6 +54,9 @@ const AppRoutes = () => {
           <Route path="blog" element={<Blog articles={articles} />} />
           <Route path="subscription" element={<Subscription />} />
           <Route path="payment" element={<Payment />} />
+          <Route path="privacy" element={<Privacy />} />
+          <Route path="terms" element={<Terms />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="/blog/:id" element={<BlogDetail articles={articles} />} />
           <Route path="/payment/successfulPayment" element={<SuccessfulPayment />} />
         </Route>

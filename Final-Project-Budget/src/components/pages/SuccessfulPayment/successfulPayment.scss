@@ -26,3 +26,13 @@
         }
     }
 }
+
+
+@media screen and (max-width: 768px) {
+    .successful-payment-section-message-card {
+        width: 90%;
+        & img {
+            width: 90%;
+        }
+    }
+}

@@ -41,7 +41,7 @@ const BlogDetail = ({ articles }: IBlogDetailProps) => {
 
   return (
     <section className="blog-detail-section">
-        <Banner title={article.title} description={article.description} image={article.urlToImage} className='blog-detail-section-banner' showButtons = {false}/>
+        <Banner title={article.title} description={article.description} image={article.urlToImage || newsImg} className='blog-detail-section-banner' showButtons = {false}/>
 
         <div className="blog-detail-section-info">
           <h1 className='blog-detail-section-info-title'>{article.title}</h1>
@@ -85,7 +85,7 @@ const BlogDetail = ({ articles }: IBlogDetailProps) => {
             </div>
           </div>
 
-        <div className="blog-detail-section-info-next-articles-responsible-cards">
+        <div className="blog-detail-section-info-next-articles-responsive-cards">
           <Swiper
         modules={[Navigation]}
         navigation={{
@@ -108,7 +108,7 @@ const BlogDetail = ({ articles }: IBlogDetailProps) => {
       >
         {nextArticles.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="blog-detail-section-info-next-articles-responsible-cards-card">
+            <div className="blog-detail-section-info-next-articles-responsive-cards-card">
                <NavLink to={`/blog/${item.id}`} state={item}>
                  <img className="blog-detail-section-info-next-articles-card-img" src={item.urlToImage || newsImg} onError={(e) => {e.currentTarget.src = newsImg;}} alt={article.title} />
                 </NavLink>

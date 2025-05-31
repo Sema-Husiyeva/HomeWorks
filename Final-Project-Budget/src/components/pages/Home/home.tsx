@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSubscriptionPlan } from '../../../store/features/authSlice';
 import Banner from '../../common/Banner/banner';
 import Button from '../../UI/Button/button';
 import Slider from '../../UI/Slider/slider';
@@ -27,12 +29,24 @@ const Home = () => {
     { id:7, icon: paperIcon, text: "Creating templates to simplify and speed up the entry of transactions!" },
     { id:8, icon: cardIcon, text: "Ability to control expenses of different accounts from one source." },
     ];
-   const navigate = useNavigate();
+    const navigate = useNavigate();
     const [isMonthly, setIsMonthly] = useState(true);
 
     const handleToggle = () => {
       setIsMonthly(!isMonthly);
     };
+
+    const dispatch = useDispatch();
+    const loginSuccess = useSelector((state: any) => state.auth.loginSuccess);
+
+    const handleNavigate = (amount: string, planType: string) => {
+          if (!loginSuccess) {
+           dispatch(setSubscriptionPlan({ amount, planType }));
+           navigate('/login');
+          } else {
+           navigate('/payment', { state: { amount, planType } });
+          }
+    }; 
   return (
     <section className='home-section'>
 
@@ -95,7 +109,7 @@ const Home = () => {
             <p>Access to basic features</p>
             <p>Monthly budget tracking</p>
             <p>Cancel anytime</p>
-            <Button text="Get Started" onClick={() => navigate('/payment')} className='subscription-banner-section-card-btn' variant="blue" />
+            <Button text="Get Started" onClick={() => handleNavigate(isMonthly ? "$3" : "$30", isMonthly ? "Basic (Monthly)" : "Basic (Yearly)")} className='subscription-banner-section-card-btn' variant="blue" />
           </div>
 
           <div className='home-section-subscription-card right'>
@@ -104,7 +118,7 @@ const Home = () => {
             <p>Advanced analytics & insights</p>
             <p>Team collaboration tools</p>
             <p>Customizable budgeting tools</p>
-            <Button text="Get Started" onClick={() => navigate('/payment')} className='subscription-banner-section-card-btn' variant="white" />
+            <Button text="Get Started" onClick={() => handleNavigate(isMonthly ? "$25" : "$250", isMonthly ? "Premium (Monthly)" : "Premium (Yearly)")} className='subscription-banner-section-card-btn' variant="white" />
           </div>
         </div>
       </section>

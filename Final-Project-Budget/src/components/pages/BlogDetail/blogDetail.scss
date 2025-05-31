@@ -71,7 +71,7 @@
                     color: $third-font-color;
                 }
             }
-            &-responsible {
+            &-responsive-cards {
                 display: none;
             }
         }
@@ -105,7 +105,7 @@
             }
             &-next-articles {
                 display: none;
-                &-responsible-cards {
+                &-responsive-cards {
                       @include flex(flex-start, flex-start, 50px);
                       width: 100%;
                       &-card {

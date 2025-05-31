@@ -74,7 +74,7 @@ const Slider: React.FC<ISliderProps> = ({ items, title, variant1, variant2, clas
         ))}
       </Swiper>
 
-      <div className={`slider-section-header-buttons-responsible ${navigationId}`}>
+      <div className={`slider-section-header-buttons-responsive ${navigationId}`}>
           <button className={`swiper-button-prev ${navigationId} filled`}></button>
           <button className={`swiper-button-next ${navigationId} filled`}></button>
       </div>

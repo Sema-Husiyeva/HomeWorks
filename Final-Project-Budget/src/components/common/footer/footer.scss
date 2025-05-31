@@ -16,10 +16,10 @@
         }
 
         &-list {
-            list-style-type: none;
-            color: $third-font-color;
-
-            & li {
+             @include flex(center, flex-start, 10px, column);
+            &-item {
+                text-decoration: none;
+                color: $third-font-color;
                 margin-bottom: 10px;
                 font-size: 1.1rem;
             }
@@ -60,7 +60,7 @@
             @include flex(space-around, center);
         }
 
-        &-responsible {
+        &-responsive {
             display: none
         }
     }
@@ -74,7 +74,7 @@
             font-size: 1.1rem;
         }
 
-        &-responsible {
+        &-responsive {
             display: none;
         }
     }
@@ -96,7 +96,7 @@
         }
         &-contact {
             display: none;
-            &-responsible {
+            &-responsive {
                 display: block;
                 & p {
                     font-size: 18px;
@@ -105,7 +105,7 @@
         }
         &-navbar {
             display: none;
-            &-responsible {
+            &-responsive {
                  @include flex(space-between, center, 20px);
                  margin-bottom: 20px;
                 &-link {

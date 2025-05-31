@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import Banner from '../../common/Banner/banner';
 import Button from '../../UI/Button/button';
 import bannerImg from '../../../assets/images/payment.png';
 import CVCImg from '../../../assets/svg/cvc.svg';
 import './payment.scss';
+import { useSelector } from 'react-redux';
 
 const Payment = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const { amount, planType } = location.state || { amount: '$0', planType: 'No Plan Selected' };
+  const subscriptionPlan = useSelector((state: any) => state.auth.subscriptionPlan);
+  const amount = subscriptionPlan?.amount || "0";
+  const planType = subscriptionPlan?.planType || "Unknown";
 
   const numberAmount = parseFloat(amount.replace('$', ''));
   const [promoCode, setPromoCode] = useState('');
@@ -134,6 +136,41 @@ const Payment = () => {
         </div>
 
         <div className='payment-section-right'>
+          <h3 className='payment-section-right-order'>Order</h3>
+
+          <div className='payment-section-right-order'>
+            <h3>Starter</h3>
+            <h3>{amount}</h3>
+          </div>
+
+          <div className='payment-section-right-order-promo'>
+            <div>
+              <p>Promokod</p>
+              <input type="text"
+              value={promoCode}
+              onChange={(e) => {
+                setPromoCode(e.target.value);
+                setPromocodeError('');
+              }} 
+              placeholder='Enter promo code' 
+              />
+            </div>
+            <Button text='Apply' onClick={handlePromoCode} variant='blue'/>
+          </div>
+          {promocodeError && <p>{promocodeError}</p>}
+          
+          <div className='payment-section-right-order'>
+            <p>Time</p>
+            <p>{planType}</p>
+          </div>
+
+          <div className='payment-section-right-order'>
+            <h3>Total</h3>
+            <h3>{`$${totalAmount.toFixed(2)}`}</h3>
+          </div>
+        </div>
+
+        <div className='payment-section-right-responsive'>
           <h3 className='payment-section-right-order'>Order</h3>
 
           <div className='payment-section-right-order'>

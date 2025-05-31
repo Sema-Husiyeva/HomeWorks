@@ -76,7 +76,7 @@ const Login = () => {
   if (loginSuccess && subscriptionPlan) {
     navigate('/payment');
   }
-}, [loginSuccess, user, navigate]);
+}, [loginSuccess]);
 
   const togglePasswordVisibility = () => {
     setShowPassword(prev => !prev);
