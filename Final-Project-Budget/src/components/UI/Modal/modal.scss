@@ -13,14 +13,14 @@
     left: 50%;
     z-index: 1;
     transform: translate(-50%, -50%);
-    transition: all .5s;
+    transition: top 0.8s ease;
     & p {
         color: $first-font-color;
         text-align: center;
         font-size: 1.2rem;
     }
 
-    &-active {
+     &.modal-active {
         top: 50%;
     }
 }

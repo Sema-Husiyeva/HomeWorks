@@ -7,11 +7,14 @@ import instagramIcon from '../../../assets/svg/white-instagram-icon.svg';
 import youtubeIcon from '../../../assets/svg/white-youtube-icon.svg';
 import twitterIcon from '../../../assets/svg/white-twitter-icon.svg';
 import linkedinIcon from '../../../assets/svg/white-linkedin-icon.svg';
+import success from '../../../assets/svg/success.svg';
 import "./header.scss"
+import Modal from '../../UI/Modal/modal';
 
 const Header = () => {
     const navigate = useNavigate();
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [isActiveModal, setIsActiveModal] = useState(false);
 
     const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
@@ -49,6 +52,12 @@ const Header = () => {
             <NavLink className='header-section-navbar-link' to="/blog">Blog</NavLink>
             <NavLink className='header-section-navbar-link' to="/subscription">Subscription</NavLink>
             <Button text='Login' onClick={() => navigate('/login')} variant='blue'/>
+            {isActiveModal && (
+        <Modal active={isActiveModal} onClick={() => navigate('/')} text='Go to home page'>
+          <img src={success} alt="success" />
+          <p>You have successfully registered!</p>
+        </Modal>
+      )}
         </nav>
 
         <nav className={`header-section-sidebar ${sidebarOpen ? 'open' : ''}`}>

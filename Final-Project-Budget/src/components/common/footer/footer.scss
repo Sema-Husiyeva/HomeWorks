@@ -3,6 +3,7 @@
 
 .footer-section {
     padding: 30px 0;
+    position: relative;
     &-main {
         @include flex(space-between, center, 20px);
         margin-bottom: 40px;
@@ -85,6 +86,13 @@
         font-weight: 300;
         margin-left: 75px;
     }
+    & .modal {
+        gap: 15px;
+        height: 370px;
+        &.modal-active {
+        top: -50%;
+     }
+    }
 }
 
 
@@ -117,6 +125,13 @@
             font-size: 18px;
             margin-left: 0;
             margin-top: 30px;
+        }
+
+        & .modal {
+          width: 390px;
+        }
+        & .modal-active {
+          top: 5%;
         }
     }
 }

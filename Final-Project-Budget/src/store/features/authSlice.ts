@@ -43,8 +43,11 @@ const authSlice = createSlice({
     setSubscriptionPlan: (state, action: PayloadAction<{ amount: string; planType: string }>) => {
      state.subscriptionPlan = action.payload;
     },
+    clearSubscriptionPlan: (state) => {
+      state.subscriptionPlan = null;
+    },
   },
 });
 
-export const { signup, login, setSubscriptionPlan } = authSlice.actions;
+export const { signup, login, setSubscriptionPlan, clearSubscriptionPlan} = authSlice.actions;
 export default authSlice.reducer;

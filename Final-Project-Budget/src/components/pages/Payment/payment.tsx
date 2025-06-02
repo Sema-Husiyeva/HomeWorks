@@ -85,6 +85,7 @@ const Payment = () => {
     }
     setPromoCode('');
   }
+  console.log('Redux subscriptionPlan:', subscriptionPlan);
   return (
     <section>
       <Banner title='Payment page' description='Secure your access to premium features with a quick and easy payment. Choose the plan that fits your needs and take control of your finances today. Your journey to smarter budgeting starts here.' image={bannerImg}/>

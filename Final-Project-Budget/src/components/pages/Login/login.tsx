@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../store/features/authSlice';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -20,10 +20,12 @@ import './login.scss';
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const user = useSelector((state: any) => state.auth.user);
+  const fromSubscription = location.state?.fromSubscription;
   const loginSuccess = useSelector((state: any) => state.auth.loginSuccess);
   const [errors, setErrors] = useState<{ email?: string; password?: string; repeatPassword?: string }>({});
   const subscriptionPlan = useSelector((state: any) => state.auth.subscriptionPlan);
@@ -68,15 +70,19 @@ const Login = () => {
     setEmail('');
     setPassword('');
     setErrors({});
-    setIsActiveModal(true);
+
+    if (fromSubscription) {
     navigate('/payment');
+    } else {
+      setIsActiveModal(true);
+    }
   };
 
   useEffect(() => {
-  if (loginSuccess && subscriptionPlan) {
+  if (loginSuccess && fromSubscription && subscriptionPlan) {
     navigate('/payment');
   }
-}, [loginSuccess]);
+  }, [loginSuccess]);
 
   const togglePasswordVisibility = () => {
     setShowPassword(prev => !prev);

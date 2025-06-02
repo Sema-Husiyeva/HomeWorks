@@ -89,6 +89,7 @@ const Home = () => {
         <Slider items={items} title='What the app does' variant1='blue' />
       </div>
 
+
       <section className='home-section-subscription'>
         <h1 className='home-section-subscription-title'>Subscription Plans</h1>
         <p className='home-section-subscription-text'>Choose the best plan for your business.</p>

@@ -24,7 +24,7 @@ const Subscription = () => {
     const handleNavigate = (amount: string, planType: string) => {
       if (!loginSuccess) {
        dispatch(setSubscriptionPlan({ amount, planType }));
-       navigate('/login');
+       navigate('/login', { state: { fromSubscription: true } });
       } else {
        navigate('/payment', { state: { amount, planType } });
       }

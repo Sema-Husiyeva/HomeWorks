@@ -6,11 +6,14 @@ import instagramIcon from '../../../assets/svg/instagram-icon.svg';
 import youtubeIcon from '../../../assets/svg/youtube-icon.svg';
 import twitterIcon from '../../../assets/svg/twitter-icon.svg';
 import linkedinIcon from '../../../assets/svg/linkedin-icon.svg';
+import subscribeImg from '../../../assets/images/subscribe.png';
 import './footer.scss';
+import Modal from '../../UI/Modal/modal';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
+    const [isActiveModal, setIsActiveModal] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
         setEmail(e.target.value);
@@ -28,6 +31,11 @@ const Footer = () => {
         }
         setEmail('');
         setError('');
+        setIsActiveModal(true);
+    }
+
+    const handleClose = () => {
+       setIsActiveModal(false);
     }
   return (
     <footer className='footer-section container'>
@@ -47,6 +55,12 @@ const Footer = () => {
             <div className='footer-section-contact-email-input'>
             <input type="email" value={email} onChange={handleChange} placeholder='E-mail' />
             <Button text='Subscribe' onClick={handleSubscribe} variant='blue' className='footer-section-contact-email-input-btn' />
+            {isActiveModal && (
+             <Modal active={isActiveModal} onClick={handleClose} text='Close'>
+                <img src={subscribeImg} alt="success" />
+                <p>Thanks for subscribing!</p>
+             </Modal>
+            )}
             </div>
             {error && <p className="footer-section-contact-email-error">{error}</p>}
         </div>
@@ -97,6 +111,12 @@ const Footer = () => {
             <div className='footer-section-contact-email-input'>
             <input type="email" value={email} onChange={handleChange} placeholder='E-mail' />
             <Button text='Subscribe' onClick={handleSubscribe} variant='blue' className='footer-section-contact-email-input-btn' />
+            {isActiveModal && (
+             <Modal active={isActiveModal} onClick={handleClose} text='Close'>
+                <img src={subscribeImg} alt="success" />
+                <p>Thanks for subscribing!</p>
+             </Modal>
+            )}
             </div>
             {error && <p className="footer-section-contact-email-error">{error}</p>}
         </div>
