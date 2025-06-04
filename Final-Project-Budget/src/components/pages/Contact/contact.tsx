@@ -60,16 +60,16 @@ const Contact = () => {
         <h2>Get in Touch</h2>
         <p>Email us anytime at <a href="mailto:support@monux.com">support@monux.com</a></p>
         <div className="social-media">
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
+          <a href="https://facebook.com" target="_blank">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer">
+          <a href="https://twitter.com" target="_blank">
             <i className="fab fa-twitter"></i>
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer">
+          <a href="https://instagram.com" target="_blank">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://linkedin.com/company" target="_blank" rel="noreferrer">
+          <a href="https://linkedin.com/company" target="_blank">
             <i className="fab fa-linkedin-in"></i>
           </a>
         </div>

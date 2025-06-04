@@ -65,11 +65,11 @@ const Footer = () => {
             {error && <p className="footer-section-contact-email-error">{error}</p>}
         </div>
         <div className='footer-section-contact-social-media'>
-            <img src={facebookIcon} alt="facebook-icon" />
-            <img src={instagramIcon} alt="instagram-icon" />
-            <img src={youtubeIcon} alt="youtube-icon" />
-            <img src={twitterIcon} alt="twitter-icon" />
-            <img src={linkedinIcon} alt="linkedin-icon" />
+            <img src={facebookIcon} onClick={() => window.open('https://facebook.com')} alt="facebook-icon" />
+            <img src={instagramIcon} onClick={() => window.open('https://instagram.com')} alt="instagram-icon" />
+            <img src={youtubeIcon} onClick={() => window.open('https://youtube.com')} alt="youtube-icon" />
+            <img src={twitterIcon} onClick={() => window.open('https://twitter.com')} alt="twitter-icon" />
+            <img src={linkedinIcon} onClick={() => window.open('https://linkedin.com')} alt="linkedin-icon" />
         </div>
       </div>
 
@@ -121,11 +121,11 @@ const Footer = () => {
             {error && <p className="footer-section-contact-email-error">{error}</p>}
         </div>
         <div className='footer-section-contact-social-media'>
-            <img src={facebookIcon} alt="facebook-icon" />
-            <img src={instagramIcon} alt="instagram-icon" />
-            <img src={youtubeIcon} alt="youtube-icon" />
-            <img src={twitterIcon} alt="twitter-icon" />
-            <img src={linkedinIcon} alt="linkedin-icon" />
+            <img src={facebookIcon} onClick={() => window.open('https://facebook.com')} alt="facebook-icon" />
+            <img src={instagramIcon} onClick={() => window.open('https://instagram.com')} alt="instagram-icon" />
+            <img src={youtubeIcon} onClick={() => window.open('https://youtube.com')} alt="youtube-icon" />
+            <img src={twitterIcon} onClick={() => window.open('https://twitter.com')} alt="twitter-icon" />
+            <img src={linkedinIcon} onClick={() => window.open('https://linkedin.com')} alt="linkedin-icon" />
         </div>
       </div>
 

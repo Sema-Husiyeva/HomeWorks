@@ -5,12 +5,12 @@ export interface IFAQItem {
 
 const faqData: IFAQItem[] = [
   {
-    question: "Why should I choose X app to manage my budget?",
-    answer: "X app helps you track your expenses, create budgets, and reach your financial goals easily."
+    question: "Why should I choose Budget app to manage my budget?",
+    answer: "Budget app helps you track your expenses, create budgets, and reach your financial goals easily."
   },
   {
-    question: "Is using X app free?",
-    answer: "Yes, X offers a free version with core features. Premium features are also available."
+    question: "Is using Budget app free?",
+    answer: "Yes, Budget offers a free version with core features. Premium features are also available."
   },
   {
     question: "How can I register on the app?",
