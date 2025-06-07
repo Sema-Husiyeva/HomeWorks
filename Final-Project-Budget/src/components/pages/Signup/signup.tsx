@@ -27,10 +27,6 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isActiveModal, setIsActiveModal] = useState(false);
 
-  const handleCancel = () => {
-   setIsActiveModal(false);
-  }
-
   const togglePasswordVisibility = () => {
     setShowPassword(prev => !prev);
   };
@@ -123,7 +119,7 @@ const Signup = () => {
       </div>
       <Button text='Sign up' onClick={handleSignup} variant='blue'/>
       {isActiveModal && (
-        <Modal active={isActiveModal} onClick={handleCancel} text='Close'>
+        <Modal active={isActiveModal} onClick={() => navigate('/login')} text='Login'>
           <img src={success} alt="success" />
           <p>You have successfully registered! You can now go to the login page.</p>
         </Modal>

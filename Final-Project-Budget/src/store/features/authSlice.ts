@@ -46,8 +46,13 @@ const authSlice = createSlice({
     clearSubscriptionPlan: (state) => {
       state.subscriptionPlan = null;
     },
-  },
+     logout: (state) => {
+      state.user = null;
+      state.loginSuccess = false;
+      state.subscriptionPlan = null;
+    }
+   },
 });
 
-export const { signup, login, setSubscriptionPlan, clearSubscriptionPlan} = authSlice.actions;
+export const { signup, login, setSubscriptionPlan, clearSubscriptionPlan, logout} = authSlice.actions;
 export default authSlice.reducer;

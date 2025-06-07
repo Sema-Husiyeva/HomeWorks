@@ -80,7 +80,13 @@ const Login = () => {
 
   useEffect(() => {
   if (loginSuccess && fromSubscription && subscriptionPlan) {
-    navigate('/payment');
+    navigate('/payment', {
+        state: {
+        amount: location.state.amount,
+        planType: location.state.planType,
+      },
+       
+   } );
   }
   }, [loginSuccess]);
 

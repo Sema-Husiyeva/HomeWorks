@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Button from '../../UI/Button/button';
+import Modal from '../../UI/Modal/modal';
 import hamburgerIcon from '../../../assets/svg/hamburger.svg';
 import facebookIcon from '../../../assets/svg/white-fb-icon.svg';
 import instagramIcon from '../../../assets/svg/white-instagram-icon.svg';
@@ -9,12 +10,17 @@ import twitterIcon from '../../../assets/svg/white-twitter-icon.svg';
 import linkedinIcon from '../../../assets/svg/white-linkedin-icon.svg';
 import success from '../../../assets/svg/success.svg';
 import "./header.scss"
-import Modal from '../../UI/Modal/modal';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from '../../../store/store';
+import { logout } from '../../../store/features/authSlice';
 
 const Header = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [isActiveModal, setIsActiveModal] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
+    const { user, loginSuccess, subscriptionPlan } = useSelector((state: RootState) => state.auth);
 
     const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
@@ -32,6 +38,11 @@ const Header = () => {
        document.documentElement.style.overflow = '';
      };
     }, [sidebarOpen]);
+
+    const handleLogout = () => {
+      dispatch(logout());
+      navigate('/');
+    }
 
   return (
     <header className='header-section container'>
@@ -51,26 +62,54 @@ const Header = () => {
             <NavLink className='header-section-navbar-link' to="/faq">FAQ</NavLink>
             <NavLink className='header-section-navbar-link' to="/blog">Blog</NavLink>
             <NavLink className='header-section-navbar-link' to="/subscription">Subscription</NavLink>
-            <Button text='Login' onClick={() => navigate('/login')} variant='blue'/>
+            {!loginSuccess ? (
+              <Button text='Login' onClick={() => navigate('/login')} variant='blue'/>
+            ): (
+              <div className="header-section-navbar-account-dropdown">
+                <Button text='My Account' onClick={() => setShowMenu(!showMenu)} variant='white' />
+               {showMenu && (
+                 <div className="header-section-navbar-account-dropdown-menu">
+                   <p><span>Email:</span> {user?.email}</p>
+                   <p><span>Plan:</span> {subscriptionPlan ? `${subscriptionPlan.planType} - ${subscriptionPlan.amount}` : "No active plan"}</p>
+                   <Button text='Change Plan' onClick={() => navigate("/subscription")} variant='white' />
+                   <Button text='Logout' onClick={handleLogout} variant='blue'/>
+                 </div>
+               )}
+             </div>
+            )}
             {isActiveModal && (
-        <Modal active={isActiveModal} onClick={() => navigate('/')} text='Go to home page'>
-          <img src={success} alt="success" />
-          <p>You have successfully registered!</p>
-        </Modal>
-      )}
+             <Modal active={isActiveModal} onClick={() => navigate('/')} text='Go to home page'>
+              <img src={success} alt="success" />
+              <p>You have successfully registered!</p>
+            </Modal>
+            )}
         </nav>
 
         <nav className={`header-section-sidebar ${sidebarOpen ? 'open' : ''}`}>
             <button className="header-section-sidebar-close-btn" onClick={toggleSidebar}>×</button>
-            <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/login">Login</NavLink>
+            {!loginSuccess ? (
+              <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/login">Login</NavLink>
+            ): (
+              <div className="header-section-sidebar-account-dropdown">
+                <Button text='My Account' onClick={() => setShowMenu(!showMenu)} variant='white' />
+               {showMenu && (
+                 <div className="header-section-sidebar-account-dropdown-menu-responsive">
+                   <p><span>Email:</span> {user?.email}</p>
+                   <p><span>Plan:</span> {subscriptionPlan ? `${subscriptionPlan.planType} - ${subscriptionPlan.amount}` : "No active plan"}</p>
+                   <Button text='Change Plan' onClick={() => navigate("/subscription")} variant='white' />
+                   <Button text='Logout' onClick={handleLogout} variant='blue'/>
+                 </div>
+               )}
+             </div>
+            )}
             <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/" end>Home</NavLink>
             <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/help" end>Help</NavLink>
             <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/faq">FAQ</NavLink>
             <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/blog">Blog</NavLink>
             <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/subscription">Subscription</NavLink>
-            <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/faq">Privacy Policy</NavLink>
-            <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/blog">Terms and Conditions</NavLink>
-            <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/subscription">Contact Us</NavLink>
+            <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/privacy">Privacy Policy</NavLink>
+            <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/terms">Terms and Conditions</NavLink>
+            <NavLink className='header-section-sidebar-link' onClick={toggleSidebar} to="/contact">Contact Us</NavLink>
 
             <div className='header-section-sidebar-social-media'>
               <img src={facebookIcon} onClick={() => window.open('https://facebook.com')} alt="facebook-icon" />

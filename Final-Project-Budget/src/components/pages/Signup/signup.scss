@@ -107,6 +107,10 @@
             &-input-password {
                 width: 390px;
             }
+            & .modal.modal-active {
+                top: 100%;
+            }
+
         }
     }
 }

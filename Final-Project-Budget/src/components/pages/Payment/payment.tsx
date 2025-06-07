@@ -1,17 +1,19 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router';
+import { setSubscriptionPlan } from '../../../store/features/authSlice';
 import Banner from '../../common/Banner/banner';
 import Button from '../../UI/Button/button';
 import bannerImg from '../../../assets/images/payment.png';
 import CVCImg from '../../../assets/svg/cvc.svg';
 import './payment.scss';
-import { useSelector } from 'react-redux';
 
 const Payment = () => {
   const navigate = useNavigate();
-  const subscriptionPlan = useSelector((state: any) => state.auth.subscriptionPlan);
-  const amount = subscriptionPlan?.amount || "0";
-  const planType = subscriptionPlan?.planType || "Unknown";
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const amount = location.state?.amount || "0";
+  const planType = location.state?.planType || "Unknown";
 
   const numberAmount = parseFloat(amount.replace('$', ''));
   const [promoCode, setPromoCode] = useState('');
@@ -68,6 +70,7 @@ const Payment = () => {
   }
 
   if (valid) {
+    dispatch(setSubscriptionPlan({ amount, planType }));
     navigate('./successfulPayment');
   }
  };
@@ -85,7 +88,6 @@ const Payment = () => {
     }
     setPromoCode('');
   }
-  console.log('Redux subscriptionPlan:', subscriptionPlan);
   return (
     <section>
       <Banner title='Payment page' description='Secure your access to premium features with a quick and easy payment. Choose the plan that fits your needs and take control of your finances today. Your journey to smarter budgeting starts here.' image={bannerImg}/>

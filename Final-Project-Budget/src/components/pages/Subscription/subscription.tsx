@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { useDispatch, useSelector } from 'react-redux';
-import { setSubscriptionPlan } from '../../../store/features/authSlice';
+import { useSelector } from 'react-redux';
 import Button from '../../UI/Button/button';
 import Banner from '../../common/Banner/banner';
 import planImg from '../../../assets/images/plan.jpeg';
@@ -13,7 +12,6 @@ import './subscription.scss';
 
 const Subscription = () => {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
     const [isMonthly, setIsMonthly] = useState(true);
     const loginSuccess = useSelector((state: any) => state.auth.loginSuccess);
 
@@ -23,8 +21,7 @@ const Subscription = () => {
 
     const handleNavigate = (amount: string, planType: string) => {
       if (!loginSuccess) {
-       dispatch(setSubscriptionPlan({ amount, planType }));
-       navigate('/login', { state: { fromSubscription: true } });
+       navigate('/login', { state: { fromSubscription: true, amount, planType } });
       } else {
        navigate('/payment', { state: { amount, planType } });
       }
