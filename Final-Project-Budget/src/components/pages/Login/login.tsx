@@ -130,12 +130,12 @@ const Login = () => {
 
       <div className='login-section-form-input'>
         <label>E-mail</label>
-        <input className='login-section-form-input-email' type="text" placeholder='Type your e-mail' onChange={(e) => setEmail(e.target.value)} />
+        <input className={errors.email ? 'login-section-form-input-email error' : 'login-section-form-input-email'} type="text" placeholder='Type your e-mail' onChange={(e) => setEmail(e.target.value)} />
         {errors.email && <p className="signup-section-form-input-error">{errors.email}</p>}
       </div>
       <div className='login-section-form-input'>
         <label>Password</label>
-        <div className='login-section-form-input-password'>
+        <div className={errors.password ? 'login-section-form-input-password error' : 'login-section-form-input-password'}>
           <input type={showPassword ? 'text' : 'password'} placeholder='Type your password' onChange={(e) => setPassword(e.target.value)} />
           <img src={showPassword ? eyeVisible : eyeInvisible} alt={showPassword ? 'eye-visible' : 'eye-invisible'} onClick={togglePasswordVisibility} />
         </div>

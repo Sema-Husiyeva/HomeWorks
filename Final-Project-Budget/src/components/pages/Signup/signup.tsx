@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import { signup } from '../../../store/features/authSlice';
 import Button from '../../UI/Button/button';
+import Modal from '../../UI/Modal/modal';
 import firstImg from '../../../assets/images/first-login-img.png';
 import secondImg from '../../../assets/images/second-login-img.png';
 import thirdImg from '../../../assets/images/third-login-img.png';
@@ -14,7 +15,6 @@ import success from '../../../assets/svg/success.svg';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './signup.scss';
-import Modal from '../../UI/Modal/modal';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -98,12 +98,12 @@ const Signup = () => {
      <div className='signup-section-form'>
       <div className='signup-section-form-input'>
         <label>E-mail</label>
-        <input className='signup-section-form-input-email' type="text" placeholder='Type your e-mail' onChange={(e) => setEmail(e.target.value)} value={email} />
+        <input className={errors.email ? 'signup-section-form-input-email error' : 'signup-section-form-input-email'} type="text" placeholder='Type your e-mail' onChange={(e) => setEmail(e.target.value)} value={email} />
         {errors.email && <p className="signup-section-form-input-error">{errors.email}</p>}
       </div>
       <div className='signup-section-form-input'>
         <label>Password</label>
-        <div className='signup-section-form-input-password'>
+        <div className={errors.password ? 'signup-section-form-input-password error' : 'signup-section-form-input-password'}>
           <input type={showPassword ? 'text' : 'password'} placeholder='Type your password' onChange={(e) => setPassword(e.target.value)} value={password} />
           <img src={showPassword ? eyeVisible : eyeInvisible} alt={showPassword ? 'eye-visible' : 'eye-invisible'} onClick={togglePasswordVisibility} />
         </div>
@@ -111,7 +111,7 @@ const Signup = () => {
       </div>
       <div className='signup-section-form-input'>
         <label>Repeate password</label>
-        <div className='signup-section-form-input-password'>
+        <div className={errors.password ? 'signup-section-form-input-password error' : 'signup-section-form-input-password'}>
           <input type={showPassword ? 'text' : 'password'} placeholder='Type your password again' value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} />
           <img src={showPassword ? eyeVisible : eyeInvisible} alt={showPassword ? 'eye-visible' : 'eye-invisible'} onClick={togglePasswordVisibility} />
         </div>
