@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import type { IArticle } from "../../../routes";
+import Button from "../../UI/Button/button";
 import Banner from "../../common/Banner/banner";
 import bannerImg from '../../../assets/images/blog.png';
 import newsImg from '../../../assets/images/news.jpeg';
 import './blog.scss';
-import Button from "../../UI/Button/button";
 
 interface IBlogProps {
   articles: IArticle[];

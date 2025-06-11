@@ -1,9 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import classNames from 'classnames';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './slider.scss';
-import classNames from 'classnames';
 
 
 interface ISliderProps {

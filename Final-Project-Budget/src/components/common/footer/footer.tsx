@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router';
 import Button from '../../UI/Button/button';
+import Modal from '../../UI/Modal/modal';
 import facebookIcon from '../../../assets/svg/facebook-icon.svg';
 import instagramIcon from '../../../assets/svg/instagram-icon.svg';
 import youtubeIcon from '../../../assets/svg/youtube-icon.svg';
@@ -8,7 +9,6 @@ import twitterIcon from '../../../assets/svg/twitter-icon.svg';
 import linkedinIcon from '../../../assets/svg/linkedin-icon.svg';
 import subscribeImg from '../../../assets/images/subscribe.png';
 import './footer.scss';
-import Modal from '../../UI/Modal/modal';
 
 const Footer = () => {
     const [email, setEmail] = useState('');

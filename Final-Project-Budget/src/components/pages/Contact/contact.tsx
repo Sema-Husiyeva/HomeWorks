@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Button from '../../UI/Button/button';
+import Modal from '../../UI/Modal/modal';
 import success from '../../../assets/svg/success.svg';
 import './contact.scss';
-import Modal from '../../UI/Modal/modal';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -77,11 +77,11 @@ const Contact = () => {
 
       <form className="contact-form" onSubmit={handleSubmit}>
         <input type="text" placeholder="Your Name" value={name} onChange={(e) => setName(e.target.value)} />
-        {errors.name && <span className="error">{errors.name}</span>}
+        {errors.name && <span className="form-error">{errors.name}</span>}
         <input type="email" placeholder="Your Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        {errors.email && <span className="error">{errors.email}</span>}
+        {errors.email && <span className="form-error">{errors.email}</span>}
         <textarea placeholder="Your Message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
-        {errors.message && <span className="error">{errors.message}</span>}
+        {errors.message && <span className="form-error">{errors.message}</span>}
         <Button text='Send' variant='blue' type='submit'/>
       </form>
       {isActiveModal && (

@@ -1,4 +1,5 @@
 import './privacy.scss';
+
 const Privacy = () => {
   return (
     <section className="privacy-policy">

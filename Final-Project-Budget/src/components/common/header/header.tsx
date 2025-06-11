@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from '../../../store/store';
+import { logout } from '../../../store/features/authSlice';
 import Button from '../../UI/Button/button';
 import Modal from '../../UI/Modal/modal';
 import hamburgerIcon from '../../../assets/svg/hamburger.svg';
@@ -10,9 +13,6 @@ import twitterIcon from '../../../assets/svg/white-twitter-icon.svg';
 import linkedinIcon from '../../../assets/svg/white-linkedin-icon.svg';
 import success from '../../../assets/svg/success.svg';
 import "./header.scss"
-import { useDispatch, useSelector } from 'react-redux';
-import type { RootState } from '../../../store/store';
-import { logout } from '../../../store/features/authSlice';
 
 const Header = () => {
     const navigate = useNavigate();
