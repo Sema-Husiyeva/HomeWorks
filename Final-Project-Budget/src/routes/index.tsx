@@ -15,6 +15,8 @@ import Signup from '../components/pages/Signup/signup'
 import Privacy from '../components/pages/Privacy/privacy'
 import Terms from '../components/pages/Terms/terms'
 import Contact from '../components/pages/Contact/contact'
+import Banner from '../components/common/Banner/banner'
+import notFoundImg from '../assets/images/404.png';
 
 export interface IArticle {
     id: string;
@@ -59,6 +61,7 @@ const AppRoutes = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="/blog/:id" element={<BlogDetail articles={articles} />} />
           <Route path="/payment/successfulPayment" element={<SuccessfulPayment />} />
+          <Route path="*" element={<Banner title='404 Error' description='Page Not Found' image={notFoundImg} showButtons={false} returnButton = {true} />} />
         </Route>
 
         <Route path="login" element={<Login />} />
