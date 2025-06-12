@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Button from '../../UI/Button/button';
 import googlePlayIcon from '../../../assets/svg/google-play.svg';
 import appStoreIcon from '../../../assets/svg/app-store.svg';
+import newsImg from '../../../assets/images/news.jpeg';
 import './banner.scss';
 
 interface IBanner {
@@ -18,7 +19,7 @@ interface IBanner {
     buttonIcons?: string[];
 }
 
-const Banner: FC<IBanner> = ({ title, description, image, showButtons = true, returnButton = false, className, variant, buttonVariants = ['blue', 'blue'] , buttonIcons = [googlePlayIcon, appStoreIcon], } ) => {
+const Banner: FC<IBanner> = ({ title, description, image, showButtons = true, returnButton = false, className, variant, buttonVariants = ['blue', 'blue'] , buttonIcons = [googlePlayIcon, appStoreIcon]} ) => {
   const navigate = useNavigate();
   return (
     <section className={classNames('banner-section', className, {
@@ -40,7 +41,7 @@ const Banner: FC<IBanner> = ({ title, description, image, showButtons = true, re
         )}
       </div>
 
-      <img className={classNames('banner-section-image', className, {'white': variant === 'white',})} src={image} alt={title} />
+      <img className={classNames('banner-section-image', className, {'white': variant === 'white',})} src={image} alt={title} onError={(e) => {const target = e.target as HTMLImageElement;target.onerror = null;target.src = newsImg;}} />
     </section>
   )
 }

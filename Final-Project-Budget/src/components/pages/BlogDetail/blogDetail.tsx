@@ -45,7 +45,7 @@ const BlogDetail = ({ articles }: IBlogDetailProps) => {
 
         <div className="blog-detail-section-info">
           <h1 className='blog-detail-section-info-title'>{article.title}</h1>
-          <img src={article.urlToImage || newsImg} alt={article.title} className="blog-detail-section-info-img" />
+          <img src={article.urlToImage || newsImg} alt={article.title} onError={(e) => {const target = e.target as HTMLImageElement;target.onerror = null;target.src = newsImg;}} className="blog-detail-section-info-img" />
           <h2 className='blog-detail-section-info-desc'>{article.description}</h2>
           <p className='blog-detail-section-info-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. </p>
           <p className='blog-detail-section-info-text'>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula. In eu dui molestie, molestie lectus eu, semper lectus. </p>

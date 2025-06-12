@@ -86,6 +86,11 @@ const Blog: React.FC<IBlogProps> = ({ articles }) => {
                 className="blogs-section-card-img"
                 src={article.urlToImage || newsImg}
                 alt={article.title}
+                onError={(e) => {
+                 const target = e.target as HTMLImageElement;
+                 target.onerror = null;
+                 target.src = newsImg;
+                }}
               />
             </Link>
             <p className="blogs-section-card-date">
